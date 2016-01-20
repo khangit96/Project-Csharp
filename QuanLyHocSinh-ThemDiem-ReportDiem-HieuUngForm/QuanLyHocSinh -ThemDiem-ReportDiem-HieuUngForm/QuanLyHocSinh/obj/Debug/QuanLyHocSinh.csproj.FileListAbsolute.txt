@@ -1,0 +1,104 @@
+c:\users\kido\documents\visual studio 2013\Projects\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.exe.config
+c:\users\kido\documents\visual studio 2013\Projects\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.exe
+c:\users\kido\documents\visual studio 2013\Projects\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.pdb
+c:\users\kido\documents\visual studio 2013\Projects\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csprojResolveAssemblyReference.cache
+c:\users\kido\documents\visual studio 2013\Projects\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.frmQuanLyHocSinh.resources
+c:\users\kido\documents\visual studio 2013\Projects\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.Properties.Resources.resources
+c:\users\kido\documents\visual studio 2013\Projects\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.GenerateResource.Cache
+c:\users\kido\documents\visual studio 2013\Projects\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.exe
+c:\users\kido\documents\visual studio 2013\Projects\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.pdb
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.exe.config
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.exe
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.pdb
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.exe
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.pdb
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csprojResolveAssemblyReference.cache
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.frmQuanLyHocSinh.resources
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.Properties.Resources.resources
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.GenerateResource.Cache
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.frmMain.resources
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.frmNhapDiem.resources
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.frmThongKe.resources
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh - Copy\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.exe.config
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh - Copy\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.exe
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh - Copy\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.pdb
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh - Copy\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.exe
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh - Copy\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.pdb
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh - Copy\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csprojResolveAssemblyReference.cache
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh - Copy\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.frmNhapDiem.resources
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh - Copy\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.frmQuanLyHocSinh.resources
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh - Copy\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.frmMain.resources
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh - Copy\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.frmThongKe.resources
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh - Copy\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.Properties.Resources.resources
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh - Copy\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.GenerateResource.Cache
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh Chinh\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.exe.config
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh Chinh\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.exe
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh Chinh\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.pdb
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh Chinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.frmNhapDiem.resources
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh Chinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.frmQuanLyHocSinh.resources
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh Chinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.frmMain.resources
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh Chinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.frmThongKe.resources
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh Chinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.Properties.Resources.resources
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh Chinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.GenerateResource.Cache
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh Chinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.exe
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh Chinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.pdb
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh Chinh\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csprojResolveAssemblyReference.cache
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh ChinhPhu\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.exe.config
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh ChinhPhu\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.exe
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh ChinhPhu\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.pdb
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh ChinhPhu\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.exe
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh ChinhPhu\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.pdb
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh ChinhPhu\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csprojResolveAssemblyReference.cache
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh ChinhPhu\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.frmNhapDiem.resources
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh ChinhPhu\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.frmQuanLyHocSinh.resources
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh ChinhPhu\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.frmMain.resources
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh ChinhPhu\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.frmThongKe.resources
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh ChinhPhu\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.Properties.Resources.resources
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh ChinhPhu\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.GenerateResource.Cache
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh ChinhPhu\QuanLyHocSinh\obj\Debug\RdlCompile.cache
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh ChinhPhu\QuanLyHocSinh\obj\Debug\RdlCompile.compiled
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh DuPhong\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.exe.config
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh DuPhong\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.exe
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh DuPhong\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.pdb
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh DuPhong\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.exe
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh DuPhong\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.pdb
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh DuPhong\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csprojResolveAssemblyReference.cache
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh DuPhong\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.frmNhapDiem.resources
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh DuPhong\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.frmQuanLyHocSinh.resources
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh DuPhong\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.frmMain.resources
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh DuPhong\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.frmThongKe.resources
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh DuPhong\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.Properties.Resources.resources
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh DuPhong\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.GenerateResource.Cache
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh DuPhong\QuanLyHocSinh\obj\Debug\RdlCompile.cache
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh DuPhong\QuanLyHocSinh\obj\Debug\RdlCompile.compiled
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh -ThemDiem-ReportDiem-HieuUngForm\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.exe.config
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh -ThemDiem-ReportDiem-HieuUngForm\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.exe
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh -ThemDiem-ReportDiem-HieuUngForm\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.pdb
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh -ThemDiem-ReportDiem-HieuUngForm\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.exe
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh -ThemDiem-ReportDiem-HieuUngForm\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.pdb
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh -ThemDiem-ReportDiem-HieuUngForm\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csprojResolveAssemblyReference.cache
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh -ThemDiem-ReportDiem-HieuUngForm\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.frmNhapDiem.resources
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh -ThemDiem-ReportDiem-HieuUngForm\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.frmQuanLyHocSinh.resources
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh -ThemDiem-ReportDiem-HieuUngForm\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.frmMain.resources
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh -ThemDiem-ReportDiem-HieuUngForm\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.frmThongKe.resources
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh -ThemDiem-ReportDiem-HieuUngForm\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.Properties.Resources.resources
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh -ThemDiem-ReportDiem-HieuUngForm\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.GenerateResource.Cache
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh -ThemDiem-ReportDiem-HieuUngForm\QuanLyHocSinh\obj\Debug\RdlCompile.cache
+E:\Cong Viec\ADO.NET 3 LAYER\SourceCode\QuanLyHocSinh -ThemDiem-ReportDiem-HieuUngForm\QuanLyHocSinh\obj\Debug\RdlCompile.compiled
+C:\Users\Administrator\Downloads\Compressed\QuanLyHocSinh-ThemDiem-ReportDiem-HieuUngForm\QuanLyHocSinh -ThemDiem-ReportDiem-HieuUngForm\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.exe.config
+C:\Users\Administrator\Downloads\Compressed\QuanLyHocSinh-ThemDiem-ReportDiem-HieuUngForm\QuanLyHocSinh -ThemDiem-ReportDiem-HieuUngForm\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.exe
+C:\Users\Administrator\Downloads\Compressed\QuanLyHocSinh-ThemDiem-ReportDiem-HieuUngForm\QuanLyHocSinh -ThemDiem-ReportDiem-HieuUngForm\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.pdb
+C:\Users\Administrator\Downloads\Compressed\QuanLyHocSinh-ThemDiem-ReportDiem-HieuUngForm\QuanLyHocSinh -ThemDiem-ReportDiem-HieuUngForm\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.exe
+C:\Users\Administrator\Downloads\Compressed\QuanLyHocSinh-ThemDiem-ReportDiem-HieuUngForm\QuanLyHocSinh -ThemDiem-ReportDiem-HieuUngForm\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.pdb
+C:\Users\Administrator\Downloads\Compressed\QuanLyHocSinh-ThemDiem-ReportDiem-HieuUngForm\QuanLyHocSinh -ThemDiem-ReportDiem-HieuUngForm\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Downloads\Compressed\QuanLyHocSinh-ThemDiem-ReportDiem-HieuUngForm\QuanLyHocSinh -ThemDiem-ReportDiem-HieuUngForm\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.frmNhapDiem.resources
+C:\Users\Administrator\Downloads\Compressed\QuanLyHocSinh-ThemDiem-ReportDiem-HieuUngForm\QuanLyHocSinh -ThemDiem-ReportDiem-HieuUngForm\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.frmQuanLyHocSinh.resources
+C:\Users\Administrator\Downloads\Compressed\QuanLyHocSinh-ThemDiem-ReportDiem-HieuUngForm\QuanLyHocSinh -ThemDiem-ReportDiem-HieuUngForm\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.frmMain.resources
+C:\Users\Administrator\Downloads\Compressed\QuanLyHocSinh-ThemDiem-ReportDiem-HieuUngForm\QuanLyHocSinh -ThemDiem-ReportDiem-HieuUngForm\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.frmThongKe.resources
+C:\Users\Administrator\Downloads\Compressed\QuanLyHocSinh-ThemDiem-ReportDiem-HieuUngForm\QuanLyHocSinh -ThemDiem-ReportDiem-HieuUngForm\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.Properties.Resources.resources
+C:\Users\Administrator\Downloads\Compressed\QuanLyHocSinh-ThemDiem-ReportDiem-HieuUngForm\QuanLyHocSinh -ThemDiem-ReportDiem-HieuUngForm\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.csproj.GenerateResource.Cache
+C:\Users\Administrator\Downloads\Compressed\QuanLyHocSinh-ThemDiem-ReportDiem-HieuUngForm\QuanLyHocSinh -ThemDiem-ReportDiem-HieuUngForm\QuanLyHocSinh\obj\Debug\RdlCompile.cache
+C:\Users\Administrator\Downloads\Compressed\QuanLyHocSinh-ThemDiem-ReportDiem-HieuUngForm\QuanLyHocSinh -ThemDiem-ReportDiem-HieuUngForm\QuanLyHocSinh\obj\Debug\RdlCompile.compiled
+C:\Users\Administrator\Desktop\Project Quản Lý Học Sinh\QuanLyHocSinh-ThemDiem-ReportDiem-HieuUngForm\QuanLyHocSinh -ThemDiem-ReportDiem-HieuUngForm\QuanLyHocSinh\bin\Debug\QuanLyHocSinh.exe.config
+C:\Users\Administrator\Desktop\Project Quản Lý Học Sinh\QuanLyHocSinh-ThemDiem-ReportDiem-HieuUngForm\QuanLyHocSinh -ThemDiem-ReportDiem-HieuUngForm\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.exe
+C:\Users\Administrator\Desktop\Project Quản Lý Học Sinh\QuanLyHocSinh-ThemDiem-ReportDiem-HieuUngForm\QuanLyHocSinh -ThemDiem-ReportDiem-HieuUngForm\QuanLyHocSinh\obj\Debug\QuanLyHocSinh.pdb
