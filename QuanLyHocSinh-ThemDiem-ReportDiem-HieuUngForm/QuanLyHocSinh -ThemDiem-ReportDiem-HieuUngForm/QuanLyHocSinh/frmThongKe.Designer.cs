@@ -30,7 +30,8 @@
         {
             this.components = new System.ComponentModel.Container();
             Microsoft.Reporting.WinForms.ReportDataSource reportDataSource1 = new Microsoft.Reporting.WinForms.ReportDataSource();
-            this.picturebox = new System.Windows.Forms.PictureBox();
+            this.DataTableTongHopBindingSource = new System.Windows.Forms.BindingSource(this.components);
+            this.QuanLyHocSinhDataSet = new QuanLyHocSinh.QuanLyHocSinhDataSet();
             this.lblTitle = new System.Windows.Forms.Label();
             this.rpBangDiem = new Microsoft.Reporting.WinForms.ReportViewer();
             this.groupBox1 = new System.Windows.Forms.GroupBox();
@@ -44,32 +45,28 @@
             this.label5 = new System.Windows.Forms.Label();
             this.label3 = new System.Windows.Forms.Label();
             this.label1 = new System.Windows.Forms.Label();
-            this.QuanLyHocSinhDataSet = new QuanLyHocSinh.QuanLyHocSinhDataSet();
-            this.DataTableTongHopBindingSource = new System.Windows.Forms.BindingSource(this.components);
             this.DataTableTongHopTableAdapter = new QuanLyHocSinh.QuanLyHocSinhDataSetTableAdapters.DataTableTongHopTableAdapter();
-            ((System.ComponentModel.ISupportInitialize)(this.picturebox)).BeginInit();
-            this.groupBox1.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.QuanLyHocSinhDataSet)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.DataTableTongHopBindingSource)).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QuanLyHocSinhDataSet)).BeginInit();
+            this.groupBox1.SuspendLayout();
             this.SuspendLayout();
             // 
-            // picturebox
+            // DataTableTongHopBindingSource
             // 
-            this.picturebox.BackgroundImage = global::QuanLyHocSinh.Properties.Resources.icon2;
-            this.picturebox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.picturebox.ErrorImage = global::QuanLyHocSinh.Properties.Resources.icon1;
-            this.picturebox.Location = new System.Drawing.Point(-1, -1);
-            this.picturebox.Name = "picturebox";
-            this.picturebox.Size = new System.Drawing.Size(46, 32);
-            this.picturebox.TabIndex = 13;
-            this.picturebox.TabStop = false;
+            this.DataTableTongHopBindingSource.DataMember = "DataTableTongHop";
+            this.DataTableTongHopBindingSource.DataSource = this.QuanLyHocSinhDataSet;
+            // 
+            // QuanLyHocSinhDataSet
+            // 
+            this.QuanLyHocSinhDataSet.DataSetName = "QuanLyHocSinhDataSet";
+            this.QuanLyHocSinhDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(41, 5);
+            this.lblTitle.Location = new System.Drawing.Point(314, 9);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(224, 23);
             this.lblTitle.TabIndex = 14;
@@ -81,9 +78,9 @@
             reportDataSource1.Value = this.DataTableTongHopBindingSource;
             this.rpBangDiem.LocalReport.DataSources.Add(reportDataSource1);
             this.rpBangDiem.LocalReport.ReportEmbeddedResource = "QuanLyHocSinh.Report1.rdlc";
-            this.rpBangDiem.Location = new System.Drawing.Point(12, 138);
+            this.rpBangDiem.Location = new System.Drawing.Point(29, 146);
             this.rpBangDiem.Name = "rpBangDiem";
-            this.rpBangDiem.Size = new System.Drawing.Size(686, 388);
+            this.rpBangDiem.Size = new System.Drawing.Size(731, 388);
             this.rpBangDiem.TabIndex = 15;
             // 
             // groupBox1
@@ -100,7 +97,7 @@
             this.groupBox1.Controls.Add(this.label1);
             this.groupBox1.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.groupBox1.ForeColor = System.Drawing.Color.White;
-            this.groupBox1.Location = new System.Drawing.Point(12, 31);
+            this.groupBox1.Location = new System.Drawing.Point(61, 39);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Size = new System.Drawing.Size(686, 101);
             this.groupBox1.TabIndex = 16;
@@ -197,16 +194,6 @@
             this.label1.TabIndex = 0;
             this.label1.Text = "Niên khóa";
             // 
-            // QuanLyHocSinhDataSet
-            // 
-            this.QuanLyHocSinhDataSet.DataSetName = "QuanLyHocSinhDataSet";
-            this.QuanLyHocSinhDataSet.SchemaSerializationMode = System.Data.SchemaSerializationMode.IncludeSchema;
-            // 
-            // DataTableTongHopBindingSource
-            // 
-            this.DataTableTongHopBindingSource.DataMember = "DataTableTongHop";
-            this.DataTableTongHopBindingSource.DataSource = this.QuanLyHocSinhDataSet;
-            // 
             // DataTableTongHopTableAdapter
             // 
             this.DataTableTongHopTableAdapter.ClearBeforeFill = true;
@@ -216,19 +203,17 @@
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(0)))), ((int)(((byte)(62)))));
-            this.ClientSize = new System.Drawing.Size(718, 546);
+            this.ClientSize = new System.Drawing.Size(792, 546);
             this.Controls.Add(this.groupBox1);
             this.Controls.Add(this.rpBangDiem);
             this.Controls.Add(this.lblTitle);
-            this.Controls.Add(this.picturebox);
             this.Name = "frmThongKe";
-            this.Text = "frmThongKe";
+            this.Text = "Thống kê";
             this.Load += new System.EventHandler(this.frmThongKe_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.picturebox)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.DataTableTongHopBindingSource)).EndInit();
+            ((System.ComponentModel.ISupportInitialize)(this.QuanLyHocSinhDataSet)).EndInit();
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.QuanLyHocSinhDataSet)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.DataTableTongHopBindingSource)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -236,7 +221,6 @@
 
         #endregion
 
-        private System.Windows.Forms.PictureBox picturebox;
         private System.Windows.Forms.Label lblTitle;
         private Microsoft.Reporting.WinForms.ReportViewer rpBangDiem;
         private System.Windows.Forms.GroupBox groupBox1;

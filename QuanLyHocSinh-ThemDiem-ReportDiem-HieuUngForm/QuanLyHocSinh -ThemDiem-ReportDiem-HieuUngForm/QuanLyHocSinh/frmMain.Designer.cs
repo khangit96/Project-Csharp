@@ -31,6 +31,7 @@
             this.components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmMain));
             this.lblTitle = new System.Windows.Forms.Label();
+            this.tmNhapDiem = new System.Windows.Forms.Timer(this.components);
             this.btnQuiDinh = new System.Windows.Forms.Button();
             this.btnPhanLop = new System.Windows.Forms.Button();
             this.btnLopHoc = new System.Windows.Forms.Button();
@@ -39,22 +40,24 @@
             this.btnThongKe = new System.Windows.Forms.Button();
             this.btnNhapDiem = new System.Windows.Forms.Button();
             this.btnMonHoc = new System.Windows.Forms.Button();
-            this.picturebox = new System.Windows.Forms.PictureBox();
             this.btnHocSinh = new System.Windows.Forms.Button();
-            this.tmNhapDiem = new System.Windows.Forms.Timer(this.components);
-            ((System.ComponentModel.ISupportInitialize)(this.picturebox)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTitle
             // 
             this.lblTitle.AutoSize = true;
-            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(44, 3);
+            this.lblTitle.Location = new System.Drawing.Point(-3, 9);
             this.lblTitle.Name = "lblTitle";
-            this.lblTitle.Size = new System.Drawing.Size(239, 21);
+            this.lblTitle.Size = new System.Drawing.Size(323, 30);
             this.lblTitle.TabIndex = 1;
             this.lblTitle.Text = "PHẦN MỀM QUẢN LÝ HỌC SINH";
+            // 
+            // tmNhapDiem
+            // 
+            this.tmNhapDiem.Interval = 1;
+            this.tmNhapDiem.Tick += new System.EventHandler(this.tmNhapDiem_Tick);
             // 
             // btnQuiDinh
             // 
@@ -103,6 +106,7 @@
             this.btnLopHoc.Text = "Lớp học";
             this.btnLopHoc.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.btnLopHoc.UseVisualStyleBackColor = false;
+            this.btnLopHoc.Click += new System.EventHandler(this.btnLopHoc_Click);
             // 
             // btnGiaoVien
             // 
@@ -135,6 +139,7 @@
             this.btnNamHoc.Text = "Niên khóa";
             this.btnNamHoc.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.btnNamHoc.UseVisualStyleBackColor = false;
+            this.btnNamHoc.Click += new System.EventHandler(this.btnNamHoc_Click);
             // 
             // btnThongKe
             // 
@@ -185,17 +190,6 @@
             this.btnMonHoc.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.btnMonHoc.UseVisualStyleBackColor = false;
             // 
-            // picturebox
-            // 
-            this.picturebox.BackgroundImage = global::QuanLyHocSinh.Properties.Resources.icon2;
-            this.picturebox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.picturebox.ErrorImage = global::QuanLyHocSinh.Properties.Resources.icon1;
-            this.picturebox.Location = new System.Drawing.Point(0, -2);
-            this.picturebox.Name = "picturebox";
-            this.picturebox.Size = new System.Drawing.Size(46, 32);
-            this.picturebox.TabIndex = 2;
-            this.picturebox.TabStop = false;
-            // 
             // btnHocSinh
             // 
             this.btnHocSinh.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(87)))), ((int)(((byte)(54)))), ((int)(((byte)(177)))));
@@ -213,11 +207,6 @@
             this.btnHocSinh.UseVisualStyleBackColor = false;
             this.btnHocSinh.Click += new System.EventHandler(this.btnHocSinh_Click);
             // 
-            // tmNhapDiem
-            // 
-            this.tmNhapDiem.Interval = 1;
-            this.tmNhapDiem.Tick += new System.EventHandler(this.tmNhapDiem_Tick);
-            // 
             // frmMain
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -232,7 +221,6 @@
             this.Controls.Add(this.btnThongKe);
             this.Controls.Add(this.btnNhapDiem);
             this.Controls.Add(this.btnMonHoc);
-            this.Controls.Add(this.picturebox);
             this.Controls.Add(this.lblTitle);
             this.Controls.Add(this.btnHocSinh);
             this.ForeColor = System.Drawing.Color.White;
@@ -240,7 +228,6 @@
             this.Name = "frmMain";
             this.Text = "Home";
             this.Load += new System.EventHandler(this.frmMain_Load);
-            ((System.ComponentModel.ISupportInitialize)(this.picturebox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -250,7 +237,6 @@
 
         private System.Windows.Forms.Button btnHocSinh;
         private System.Windows.Forms.Label lblTitle;
-        private System.Windows.Forms.PictureBox picturebox;
         private System.Windows.Forms.Button btnMonHoc;
         private System.Windows.Forms.Button btnNhapDiem;
         private System.Windows.Forms.Button btnThongKe;

@@ -55,11 +55,9 @@
             this.btnSua = new System.Windows.Forms.Button();
             this.btnXoa = new System.Windows.Forms.Button();
             this.btnThem = new System.Windows.Forms.Button();
-            this.picturebox = new System.Windows.Forms.PictureBox();
             this.gbThongTinHocSinh.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachHocSinh)).BeginInit();
             this.gbTimKiem.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picturebox)).BeginInit();
             this.SuspendLayout();
             // 
             // lblTieuDe
@@ -67,11 +65,11 @@
             this.lblTieuDe.AutoSize = true;
             this.lblTieuDe.Font = new System.Drawing.Font("Segoe UI", 13F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTieuDe.ForeColor = System.Drawing.Color.White;
-            this.lblTieuDe.Location = new System.Drawing.Point(41, 4);
+            this.lblTieuDe.Location = new System.Drawing.Point(300, 9);
             this.lblTieuDe.Name = "lblTieuDe";
-            this.lblTieuDe.Size = new System.Drawing.Size(175, 25);
+            this.lblTieuDe.Size = new System.Drawing.Size(313, 25);
             this.lblTieuDe.TabIndex = 0;
-            this.lblTieuDe.Text = "QUẢN LÝ HỌC SINH";
+            this.lblTieuDe.Text = "NHẬP THÔNG TIN CHUNG HỌC SINH";
             // 
             // gbThongTinHocSinh
             // 
@@ -90,7 +88,7 @@
             this.gbThongTinHocSinh.Controls.Add(this.lblMaHS);
             this.gbThongTinHocSinh.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbThongTinHocSinh.ForeColor = System.Drawing.Color.White;
-            this.gbThongTinHocSinh.Location = new System.Drawing.Point(88, 32);
+            this.gbThongTinHocSinh.Location = new System.Drawing.Point(88, 48);
             this.gbThongTinHocSinh.Name = "gbThongTinHocSinh";
             this.gbThongTinHocSinh.Size = new System.Drawing.Size(706, 175);
             this.gbThongTinHocSinh.TabIndex = 1;
@@ -235,6 +233,7 @@
             this.dgvDanhSachHocSinh.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvDanhSachHocSinh.Size = new System.Drawing.Size(599, 216);
             this.dgvDanhSachHocSinh.TabIndex = 2;
+            this.dgvDanhSachHocSinh.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvDanhSachHocSinh_CellContentClick);
             this.dgvDanhSachHocSinh.Click += new System.EventHandler(this.dgvDanhSachHocSinh_Click);
             // 
             // gbTimKiem
@@ -349,24 +348,12 @@
             this.btnThem.UseVisualStyleBackColor = false;
             this.btnThem.Click += new System.EventHandler(this.btnThem_Click);
             // 
-            // picturebox
-            // 
-            this.picturebox.BackgroundImage = global::QuanLyHocSinh.Properties.Resources.icon2;
-            this.picturebox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.picturebox.ErrorImage = global::QuanLyHocSinh.Properties.Resources.icon1;
-            this.picturebox.Location = new System.Drawing.Point(0, 2);
-            this.picturebox.Name = "picturebox";
-            this.picturebox.Size = new System.Drawing.Size(46, 32);
-            this.picturebox.TabIndex = 8;
-            this.picturebox.TabStop = false;
-            // 
             // frmQuanLyHocSinh
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(0)))), ((int)(((byte)(62)))));
             this.ClientSize = new System.Drawing.Size(888, 538);
-            this.Controls.Add(this.picturebox);
             this.Controls.Add(this.gbTimKiem);
             this.Controls.Add(this.btnThoat);
             this.Controls.Add(this.btnHuy);
@@ -386,7 +373,6 @@
             ((System.ComponentModel.ISupportInitialize)(this.dgvDanhSachHocSinh)).EndInit();
             this.gbTimKiem.ResumeLayout(false);
             this.gbTimKiem.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)(this.picturebox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -419,7 +405,6 @@
         private System.Windows.Forms.GroupBox gbTimKiem;
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.TextBox txtTimKiem;
-        private System.Windows.Forms.PictureBox picturebox;
     }
 }
 

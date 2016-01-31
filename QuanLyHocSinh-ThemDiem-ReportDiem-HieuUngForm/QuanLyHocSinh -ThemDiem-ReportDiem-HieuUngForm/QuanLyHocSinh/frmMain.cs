@@ -55,7 +55,7 @@ namespace QuanLyHocSinh
 
         private void btnThongKe_Click(object sender, EventArgs e)
         {
-            frmQuanLyHocSinh frm = new frmQuanLyHocSinh();
+            frmThongKe frm = new frmThongKe();
             frm.ShowDialog();
         }
 
@@ -76,6 +76,26 @@ namespace QuanLyHocSinh
         private void frmMain_Load(object sender, EventArgs e)
         {
 
+        }
+
+        private void picturebox_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnNamHoc_Click(object sender, EventArgs e)
+        {
+            frmNienkhoa fr = new frmNienkhoa();
+            fr.ShowDialog();
+           
+          
+
+        }
+
+        private void btnLopHoc_Click(object sender, EventArgs e)
+        {
+            frLopHoc fr = new frLopHoc();
+            fr.ShowDialog();
         }
     }
 }

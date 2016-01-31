@@ -60,6 +60,7 @@ namespace QuanLyHocSinh
             daLopHoc = new SqlDataAdapter(sSelectLopHoc, sChuoiKetNoi);
             daLopHoc.Fill(ds, "tblLopHoc");
             cmbLop.DataSource = ds.Tables["tblLopHoc"];
+            //hiện cột TenLop trong table vào combobox
             cmbLop.DisplayMember = "TenLop";
             cmbLop.ValueMember = "MaLop";
             //tạo chuỗi truy vấn lấy thông tin cả 2 bảng 
@@ -71,6 +72,7 @@ namespace QuanLyHocSinh
             //dgvDanhSachHocSinh.Columns["MaLop"].Visible = false;
             //dgvDanhSachHocSinh.Columns["TenLop"].HeaderText = "Tên lớp";
             //dgvDanhSachHocSinh.Columns["TenLop"].Width = 50;
+            //Tạo thêm 1 cột khác để lấy tên lớp
             DataGridViewColumn clTenLop = new DataGridViewColumn();
             DataGridViewCell cell = new DataGridViewTextBoxCell();
             clTenLop.CellTemplate = cell;
@@ -79,17 +81,19 @@ namespace QuanLyHocSinh
             dgvDanhSachHocSinh.Columns.Add(clTenLop);
 
             for (int i = 0; i < dgvDanhSachHocSinh.RowCount; i++)
-            {
+            {  
                 dgvDanhSachHocSinh.Rows[i].Cells["TenLop"].Value = LayTenLopHoc(dgvDanhSachHocSinh.Rows[i].Cells["MaLop"].Value.ToString());
 
             }
             //Ẩn cột lớp học 
             dgvDanhSachHocSinh.Columns["MaLop"].Visible = false;
+            //Thay đổi lại độ dài các cột
             dgvDanhSachHocSinh.Columns["TenLop"].HeaderText = "Tên lớp";
             dgvDanhSachHocSinh.Columns["TenLop"].Width = 90;
             dgvDanhSachHocSinh.Columns["HoTen"].Width = 100;
             dgvDanhSachHocSinh.Columns["MaHs"].Width = 100;
             dgvDanhSachHocSinh.Columns["HoTen"].Width = 140;
+            dgvDanhSachHocSinh.Columns["GioiTinh"].Width = 70;
             //Tạo đối tượng kết nối đến Database
             SqlConnection con = new SqlConnection(sChuoiKetNoi);
             //Tạo đối tượng command thực thi câu lệnh truy vấn insert
@@ -283,6 +287,11 @@ namespace QuanLyHocSinh
         {
             //dv.RowFilter = "HoTen like '%" + txtTimKiem.Text + "%'";
             dv.RowFilter = string.Format("HoTen like '%{0}%'", txtTimKiem.Text);
+        }
+
+        private void dgvDanhSachHocSinh_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+
         }
         
         

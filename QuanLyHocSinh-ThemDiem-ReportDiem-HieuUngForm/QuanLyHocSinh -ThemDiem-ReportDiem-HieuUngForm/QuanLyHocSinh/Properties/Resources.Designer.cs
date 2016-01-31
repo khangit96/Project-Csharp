@@ -63,6 +63,26 @@ namespace QuanLyHocSinh.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap _1453311386_graduated {
+            get {
+                object obj = ResourceManager.GetObject("1453311386_graduated", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap _1453311386_graduated1 {
+            get {
+                object obj = ResourceManager.GetObject("1453311386_graduated1", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap btnNhapDiem {
             get {
                 object obj = ResourceManager.GetObject("btnNhapDiem", resourceCulture);
@@ -173,6 +193,16 @@ namespace QuanLyHocSinh.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Iconsmind_Outline_Students__1_ {
+            get {
+                object obj = ResourceManager.GetObject("Iconsmind-Outline-Students (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap lophoc {
             get {
                 object obj = ResourceManager.GetObject("lophoc", resourceCulture);
@@ -256,6 +286,16 @@ namespace QuanLyHocSinh.Properties {
         internal static System.Drawing.Bitmap quidinh {
             get {
                 object obj = ResourceManager.GetObject("quidinh", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Students_icon {
+            get {
+                object obj = ResourceManager.GetObject("Students-icon", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

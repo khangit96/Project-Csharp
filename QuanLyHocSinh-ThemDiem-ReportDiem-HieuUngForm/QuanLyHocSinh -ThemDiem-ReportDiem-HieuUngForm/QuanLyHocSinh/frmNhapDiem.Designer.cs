@@ -55,13 +55,11 @@
             this.btnNhapDiem = new System.Windows.Forms.Button();
             this.btnXemDiem = new System.Windows.Forms.Button();
             this.btnTinhDiem = new System.Windows.Forms.Button();
-            this.picturebox = new System.Windows.Forms.PictureBox();
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
             this.grbNhapDiem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBangDiem)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picturebox)).BeginInit();
             this.SuspendLayout();
             // 
             // grbNhapDiem
@@ -78,7 +76,7 @@
             this.grbNhapDiem.Controls.Add(this.cmbNienKhoa);
             this.grbNhapDiem.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.grbNhapDiem.ForeColor = System.Drawing.Color.White;
-            this.grbNhapDiem.Location = new System.Drawing.Point(12, 49);
+            this.grbNhapDiem.Location = new System.Drawing.Point(26, 35);
             this.grbNhapDiem.Name = "grbNhapDiem";
             this.grbNhapDiem.Size = new System.Drawing.Size(189, 477);
             this.grbNhapDiem.TabIndex = 0;
@@ -186,7 +184,7 @@
             this.lblTitle.AutoSize = true;
             this.lblTitle.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle.ForeColor = System.Drawing.Color.White;
-            this.lblTitle.Location = new System.Drawing.Point(39, 5);
+            this.lblTitle.Location = new System.Drawing.Point(444, 9);
             this.lblTitle.Name = "lblTitle";
             this.lblTitle.Size = new System.Drawing.Size(189, 23);
             this.lblTitle.TabIndex = 1;
@@ -196,7 +194,7 @@
             // 
             this.dgvBangDiem.AllowUserToAddRows = false;
             this.dgvBangDiem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dgvBangDiem.Location = new System.Drawing.Point(215, 228);
+            this.dgvBangDiem.Location = new System.Drawing.Point(229, 214);
             this.dgvBangDiem.Name = "dgvBangDiem";
             dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
             dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
@@ -204,15 +202,17 @@
             dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
             this.dgvBangDiem.RowsDefaultCellStyle = dataGridViewCellStyle1;
-            this.dgvBangDiem.Size = new System.Drawing.Size(483, 224);
+            this.dgvBangDiem.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
+            this.dgvBangDiem.Size = new System.Drawing.Size(672, 183);
             this.dgvBangDiem.TabIndex = 10;
+            this.dgvBangDiem.CellContentClick += new System.Windows.Forms.DataGridViewCellEventHandler(this.dgvBangDiem_CellContentClick);
             // 
             // lblTitle6
             // 
             this.lblTitle6.AutoSize = true;
             this.lblTitle6.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblTitle6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.lblTitle6.Location = new System.Drawing.Point(207, 49);
+            this.lblTitle6.Location = new System.Drawing.Point(221, 35);
             this.lblTitle6.Name = "lblTitle6";
             this.lblTitle6.Size = new System.Drawing.Size(143, 23);
             this.lblTitle6.TabIndex = 11;
@@ -223,7 +223,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.label6.Location = new System.Drawing.Point(207, 85);
+            this.label6.Location = new System.Drawing.Point(221, 71);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(96, 23);
             this.label6.TabIndex = 13;
@@ -234,7 +234,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.label7.Location = new System.Drawing.Point(209, 122);
+            this.label7.Location = new System.Drawing.Point(223, 108);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(46, 23);
             this.label7.TabIndex = 14;
@@ -245,7 +245,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.label8.Location = new System.Drawing.Point(209, 158);
+            this.label8.Location = new System.Drawing.Point(223, 144);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(70, 23);
             this.label8.TabIndex = 15;
@@ -256,7 +256,7 @@
             this.lblMonHoc.AutoSize = true;
             this.lblMonHoc.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblMonHoc.ForeColor = System.Drawing.Color.White;
-            this.lblMonHoc.Location = new System.Drawing.Point(352, 51);
+            this.lblMonHoc.Location = new System.Drawing.Point(366, 37);
             this.lblMonHoc.Name = "lblMonHoc";
             this.lblMonHoc.Size = new System.Drawing.Size(49, 20);
             this.lblMonHoc.TabIndex = 16;
@@ -267,7 +267,7 @@
             this.lblNienKhoa.AutoSize = true;
             this.lblNienKhoa.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblNienKhoa.ForeColor = System.Drawing.Color.White;
-            this.lblNienKhoa.Location = new System.Drawing.Point(304, 88);
+            this.lblNienKhoa.Location = new System.Drawing.Point(318, 74);
             this.lblNienKhoa.Name = "lblNienKhoa";
             this.lblNienKhoa.Size = new System.Drawing.Size(87, 20);
             this.lblNienKhoa.TabIndex = 16;
@@ -278,7 +278,7 @@
             this.lblLop.AutoSize = true;
             this.lblLop.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblLop.ForeColor = System.Drawing.Color.White;
-            this.lblLop.Location = new System.Drawing.Point(249, 125);
+            this.lblLop.Location = new System.Drawing.Point(263, 111);
             this.lblLop.Name = "lblLop";
             this.lblLop.Size = new System.Drawing.Size(47, 20);
             this.lblLop.TabIndex = 16;
@@ -289,7 +289,7 @@
             this.lblHocKy.AutoSize = true;
             this.lblHocKy.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblHocKy.ForeColor = System.Drawing.Color.White;
-            this.lblHocKy.Location = new System.Drawing.Point(274, 161);
+            this.lblHocKy.Location = new System.Drawing.Point(288, 147);
             this.lblHocKy.Name = "lblHocKy";
             this.lblHocKy.Size = new System.Drawing.Size(14, 20);
             this.lblHocKy.TabIndex = 16;
@@ -300,7 +300,7 @@
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(255)))), ((int)(((byte)(128)))));
-            this.label9.Location = new System.Drawing.Point(211, 192);
+            this.label9.Location = new System.Drawing.Point(225, 178);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(51, 23);
             this.label9.TabIndex = 17;
@@ -311,7 +311,7 @@
             this.lblKhoi.AutoSize = true;
             this.lblKhoi.Font = new System.Drawing.Font("Segoe UI", 11.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lblKhoi.ForeColor = System.Drawing.Color.White;
-            this.lblKhoi.Location = new System.Drawing.Point(268, 194);
+            this.lblKhoi.Location = new System.Drawing.Point(282, 180);
             this.lblKhoi.Name = "lblKhoi";
             this.lblKhoi.Size = new System.Drawing.Size(27, 20);
             this.lblKhoi.TabIndex = 18;
@@ -323,7 +323,7 @@
             this.btnNhapDiem.BackgroundImage = global::QuanLyHocSinh.Properties.Resources.btnNhapDiem;
             this.btnNhapDiem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnNhapDiem.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnNhapDiem.Location = new System.Drawing.Point(230, 458);
+            this.btnNhapDiem.Location = new System.Drawing.Point(244, 444);
             this.btnNhapDiem.Name = "btnNhapDiem";
             this.btnNhapDiem.Size = new System.Drawing.Size(73, 68);
             this.btnNhapDiem.TabIndex = 21;
@@ -336,7 +336,7 @@
             this.btnXemDiem.BackgroundImage = global::QuanLyHocSinh.Properties.Resources.btnXemDiem;
             this.btnXemDiem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnXemDiem.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnXemDiem.Location = new System.Drawing.Point(309, 458);
+            this.btnXemDiem.Location = new System.Drawing.Point(323, 444);
             this.btnXemDiem.Name = "btnXemDiem";
             this.btnXemDiem.Size = new System.Drawing.Size(73, 68);
             this.btnXemDiem.TabIndex = 20;
@@ -349,23 +349,12 @@
             this.btnTinhDiem.BackgroundImage = global::QuanLyHocSinh.Properties.Resources.btnTinhDiem2;
             this.btnTinhDiem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnTinhDiem.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnTinhDiem.Location = new System.Drawing.Point(388, 458);
+            this.btnTinhDiem.Location = new System.Drawing.Point(402, 444);
             this.btnTinhDiem.Name = "btnTinhDiem";
             this.btnTinhDiem.Size = new System.Drawing.Size(73, 68);
             this.btnTinhDiem.TabIndex = 19;
             this.btnTinhDiem.UseVisualStyleBackColor = false;
             this.btnTinhDiem.Click += new System.EventHandler(this.btnTinhDiem_Click);
-            // 
-            // picturebox
-            // 
-            this.picturebox.BackgroundImage = global::QuanLyHocSinh.Properties.Resources.icon2;
-            this.picturebox.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
-            this.picturebox.ErrorImage = global::QuanLyHocSinh.Properties.Resources.icon1;
-            this.picturebox.Location = new System.Drawing.Point(-3, 0);
-            this.picturebox.Name = "picturebox";
-            this.picturebox.Size = new System.Drawing.Size(46, 32);
-            this.picturebox.TabIndex = 12;
-            this.picturebox.TabStop = false;
             // 
             // btnThoat
             // 
@@ -373,7 +362,7 @@
             this.btnThoat.BackgroundImage = global::QuanLyHocSinh.Properties.Resources.Thoat;
             this.btnThoat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnThoat.Location = new System.Drawing.Point(625, 458);
+            this.btnThoat.Location = new System.Drawing.Point(639, 444);
             this.btnThoat.Name = "btnThoat";
             this.btnThoat.Size = new System.Drawing.Size(73, 68);
             this.btnThoat.TabIndex = 9;
@@ -386,7 +375,7 @@
             this.btnHuy.BackgroundImage = global::QuanLyHocSinh.Properties.Resources.Huy;
             this.btnHuy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnHuy.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnHuy.Location = new System.Drawing.Point(546, 458);
+            this.btnHuy.Location = new System.Drawing.Point(560, 444);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(73, 68);
             this.btnHuy.TabIndex = 8;
@@ -399,7 +388,7 @@
             this.btnLuu.BackgroundImage = global::QuanLyHocSinh.Properties.Resources.Luu;
             this.btnLuu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnLuu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnLuu.Location = new System.Drawing.Point(467, 458);
+            this.btnLuu.Location = new System.Drawing.Point(481, 444);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(73, 68);
             this.btnLuu.TabIndex = 7;
@@ -424,7 +413,6 @@
             this.Controls.Add(this.label8);
             this.Controls.Add(this.label7);
             this.Controls.Add(this.label6);
-            this.Controls.Add(this.picturebox);
             this.Controls.Add(this.lblTitle6);
             this.Controls.Add(this.dgvBangDiem);
             this.Controls.Add(this.btnThoat);
@@ -439,7 +427,6 @@
             this.grbNhapDiem.ResumeLayout(false);
             this.grbNhapDiem.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBangDiem)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.picturebox)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -464,7 +451,6 @@
         private System.Windows.Forms.Button btnLuu;
         private System.Windows.Forms.DataGridView dgvBangDiem;
         private System.Windows.Forms.Label lblTitle6;
-        private System.Windows.Forms.PictureBox picturebox;
         private System.Windows.Forms.Label label6;
         private System.Windows.Forms.Label label7;
         private System.Windows.Forms.Label label8;
