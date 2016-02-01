@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle4 = new System.Windows.Forms.DataGridViewCellStyle();
             this.grbNhapDiem = new System.Windows.Forms.GroupBox();
             this.label3 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
@@ -53,11 +53,11 @@
             this.label9 = new System.Windows.Forms.Label();
             this.lblKhoi = new System.Windows.Forms.Label();
             this.btnNhapDiem = new System.Windows.Forms.Button();
-            this.btnXemDiem = new System.Windows.Forms.Button();
             this.btnTinhDiem = new System.Windows.Forms.Button();
             this.btnThoat = new System.Windows.Forms.Button();
             this.btnHuy = new System.Windows.Forms.Button();
             this.btnLuu = new System.Windows.Forms.Button();
+            this.btXoa = new System.Windows.Forms.Button();
             this.grbNhapDiem.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.dgvBangDiem)).BeginInit();
             this.SuspendLayout();
@@ -82,6 +82,7 @@
             this.grbNhapDiem.TabIndex = 0;
             this.grbNhapDiem.TabStop = false;
             this.grbNhapDiem.Text = "Nhập điểm theo";
+            this.grbNhapDiem.Enter += new System.EventHandler(this.grbNhapDiem_Enter);
             // 
             // label3
             // 
@@ -196,12 +197,12 @@
             this.dgvBangDiem.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             this.dgvBangDiem.Location = new System.Drawing.Point(229, 214);
             this.dgvBangDiem.Name = "dgvBangDiem";
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            this.dgvBangDiem.RowsDefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(128)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            dataGridViewCellStyle4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle4.ForeColor = System.Drawing.Color.White;
+            dataGridViewCellStyle4.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
+            dataGridViewCellStyle4.SelectionForeColor = System.Drawing.Color.White;
+            this.dgvBangDiem.RowsDefaultCellStyle = dataGridViewCellStyle4;
             this.dgvBangDiem.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvBangDiem.Size = new System.Drawing.Size(672, 183);
             this.dgvBangDiem.TabIndex = 10;
@@ -330,26 +331,13 @@
             this.btnNhapDiem.UseVisualStyleBackColor = false;
             this.btnNhapDiem.Click += new System.EventHandler(this.btnNhapDiem_Click);
             // 
-            // btnXemDiem
-            // 
-            this.btnXemDiem.BackColor = System.Drawing.Color.BlueViolet;
-            this.btnXemDiem.BackgroundImage = global::QuanLyHocSinh.Properties.Resources.btnXemDiem;
-            this.btnXemDiem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.btnXemDiem.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnXemDiem.Location = new System.Drawing.Point(323, 444);
-            this.btnXemDiem.Name = "btnXemDiem";
-            this.btnXemDiem.Size = new System.Drawing.Size(73, 68);
-            this.btnXemDiem.TabIndex = 20;
-            this.btnXemDiem.UseVisualStyleBackColor = false;
-            this.btnXemDiem.Click += new System.EventHandler(this.btnXemDiem_Click);
-            // 
             // btnTinhDiem
             // 
             this.btnTinhDiem.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(0)))));
             this.btnTinhDiem.BackgroundImage = global::QuanLyHocSinh.Properties.Resources.btnTinhDiem2;
             this.btnTinhDiem.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.btnTinhDiem.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnTinhDiem.Location = new System.Drawing.Point(402, 444);
+            this.btnTinhDiem.Location = new System.Drawing.Point(323, 444);
             this.btnTinhDiem.Name = "btnTinhDiem";
             this.btnTinhDiem.Size = new System.Drawing.Size(73, 68);
             this.btnTinhDiem.TabIndex = 19;
@@ -362,9 +350,9 @@
             this.btnThoat.BackgroundImage = global::QuanLyHocSinh.Properties.Resources.Thoat;
             this.btnThoat.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnThoat.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnThoat.Location = new System.Drawing.Point(639, 444);
+            this.btnThoat.Location = new System.Drawing.Point(631, 446);
             this.btnThoat.Name = "btnThoat";
-            this.btnThoat.Size = new System.Drawing.Size(73, 68);
+            this.btnThoat.Size = new System.Drawing.Size(72, 68);
             this.btnThoat.TabIndex = 9;
             this.btnThoat.UseVisualStyleBackColor = false;
             this.btnThoat.Click += new System.EventHandler(this.btnThoat_Click);
@@ -375,7 +363,7 @@
             this.btnHuy.BackgroundImage = global::QuanLyHocSinh.Properties.Resources.Huy;
             this.btnHuy.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnHuy.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnHuy.Location = new System.Drawing.Point(560, 444);
+            this.btnHuy.Location = new System.Drawing.Point(481, 444);
             this.btnHuy.Name = "btnHuy";
             this.btnHuy.Size = new System.Drawing.Size(73, 68);
             this.btnHuy.TabIndex = 8;
@@ -388,12 +376,24 @@
             this.btnLuu.BackgroundImage = global::QuanLyHocSinh.Properties.Resources.Luu;
             this.btnLuu.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Center;
             this.btnLuu.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
-            this.btnLuu.Location = new System.Drawing.Point(481, 444);
+            this.btnLuu.Location = new System.Drawing.Point(402, 444);
             this.btnLuu.Name = "btnLuu";
             this.btnLuu.Size = new System.Drawing.Size(73, 68);
             this.btnLuu.TabIndex = 7;
             this.btnLuu.UseVisualStyleBackColor = false;
             this.btnLuu.Click += new System.EventHandler(this.btnLuu_Click);
+            // 
+            // btXoa
+            // 
+            this.btXoa.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.btXoa.BackgroundImage = global::QuanLyHocSinh.Properties.Resources.Xoa;
+            this.btXoa.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
+            this.btXoa.Location = new System.Drawing.Point(560, 446);
+            this.btXoa.Name = "btXoa";
+            this.btXoa.Size = new System.Drawing.Size(65, 66);
+            this.btXoa.TabIndex = 22;
+            this.btXoa.UseVisualStyleBackColor = false;
+            this.btXoa.Click += new System.EventHandler(this.btXoa_Click);
             // 
             // frmNhapDiem
             // 
@@ -401,8 +401,8 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(16)))), ((int)(((byte)(0)))), ((int)(((byte)(62)))));
             this.ClientSize = new System.Drawing.Size(923, 538);
+            this.Controls.Add(this.btXoa);
             this.Controls.Add(this.btnNhapDiem);
-            this.Controls.Add(this.btnXemDiem);
             this.Controls.Add(this.btnTinhDiem);
             this.Controls.Add(this.lblKhoi);
             this.Controls.Add(this.label9);
@@ -461,7 +461,7 @@
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.Label lblKhoi;
         private System.Windows.Forms.Button btnTinhDiem;
-        private System.Windows.Forms.Button btnXemDiem;
         private System.Windows.Forms.Button btnNhapDiem;
+        private System.Windows.Forms.Button btXoa;
     }
 }

@@ -19,8 +19,11 @@ namespace QuanLyHocSinh
             InitializeComponent();
         }
         DataSet ds;
+        DataView dv;
+        SqlDataAdapter daDiem;
         SqlDataAdapter daNienKhoa;
         SqlDataAdapter daKhoi;
+        private bool NutNhan = false;//dùng để nhận biết xem người dùng đã nhấn nút nhập điểm hay chưa.Nếu nhấn nút nhập điểm thì insert điểm còn ko thì update điểm
         private void frmNhapDiem_Load(object sender, EventArgs e)
         {
 
@@ -81,7 +84,10 @@ namespace QuanLyHocSinh
         //Tạo đối tượng DataAdapter load cmbLop dựa vào cmbNienKhoa
         SqlDataAdapter daLop;
         private void cmbNienKhoa_SelectedIndexChanged(object sender, EventArgs e)
-        {    //nếu chọn niên khóa mà khác null
+        {
+            NutNhan = false;
+            removeCot();
+            //nếu chọn niên khóa mà khác null
             if (cmbNienKhoa.SelectedValue != null &&!(cmbNienKhoa.SelectedValue is DataRowView)
                 && cmbKhoi.SelectedValue!=null&& !(cmbKhoi.SelectedValue is DataRowView) //Bổ sung load cmb lớp 
                 )
@@ -150,7 +156,8 @@ namespace QuanLyHocSinh
         SqlDataAdapter daMonHoc;
         private void cmbKhoi_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            NutNhan = false;
+            removeCot();
             if (cmbKhoi.SelectedValue != null && !(cmbKhoi.SelectedValue is DataRowView) 
                 && cmbHocKy.SelectedValue!=null&&!(cmbHocKy.SelectedValue is DataRowView)
                 && cmbNienKhoa.SelectedValue!=null&&!(cmbNienKhoa.SelectedValue is DataRowView) //Bổ sung điều kiện để load cmblop
@@ -218,6 +225,8 @@ namespace QuanLyHocSinh
         
         private void cmbHocKy_SelectedIndexChanged(object sender, EventArgs e)
         {
+            removeCot();
+            NutNhan = false;
             if (cmbKhoi.SelectedValue != null && !(cmbKhoi.SelectedValue is DataRowView)
                && cmbHocKy.SelectedValue != null && !(cmbHocKy.SelectedValue is DataRowView)
                )
@@ -288,7 +297,8 @@ namespace QuanLyHocSinh
 
         private void cmbLop_SelectedIndexChanged(object sender, EventArgs e)
         {
-
+            NutNhan = false;
+            removeCot();
             lblLop.Text = cmbLop.Text;
             //Load dgv học sinh khi cmb thay đổi
             //LoadDSDiemHS();
@@ -304,7 +314,8 @@ namespace QuanLyHocSinh
 
         private void cmbMonHoc_SelectedIndexChanged(object sender, EventArgs e)
         {
-           removeCot();
+            NutNhan = false;
+            removeCot();
            for (int i = 0; i < dgvBangDiem.Rows.Count; i++)
            {
                dgvBangDiem.Rows.RemoveAt(i);
@@ -408,8 +419,7 @@ namespace QuanLyHocSinh
             {
                 dgvBangDiem.DataSource = null;
             }
-        }
-        private bool NutNhan = true;
+        }     
         int TaoCot=0;
         private void btnNhapDiem_Click(object sender, EventArgs e)
         {
@@ -417,6 +427,7 @@ namespace QuanLyHocSinh
             if (cmbMonHoc.Items.Count == 0||cmbNienKhoa.Items.Count==0||cmbLop.Items.Count==0)
             {
                 MessageBox.Show("Vui lòng chọn đầy đủ thông tin!");
+                NutNhan = false;
                 return;
             }
             else
@@ -426,209 +437,131 @@ namespace QuanLyHocSinh
                 if (countHocSinhLop == 0)//lớp học chưa đk nhập học sinh
                 {
                     MessageBox.Show("Vui lòng nhập học sinh cho lớp học!");
+                    NutNhan = false;
                     return;
                 }
                 int countHocSinhNhapDiemMonHoc = CountNhapDiem_MonHoc();//biến đếm số học sinh đk nhập điểm theo môn học đã đk chọn
                 if (countHocSinhNhapDiemMonHoc == countHocSinhLop)//nếu học sinh đã đk nhập hết điểm
                 {
                     MessageBox.Show("Học sinh đã đk nhập điểm hết cho môn "+cmbMonHoc.Text+"!");
+                    NutNhan = false;
+                    removeCot();
+                    dgvBangDiem.DataSource = null;
+                    loadDiem();
                 }
                 else
                 {
+                    NutNhan = true;
                     removeCot();
                     dgvBangDiem.DataSource = null;
-                   // MessageBox.Show("Học sinh vẫn chưa đk nhập điểm hết môn " + cmbMonHoc.Text + " !");
                     hocSinhChuaNhapDiem();
                 }
             }
-                //Gọi hàm để load dgv học sinh chưa nhập điểm
-               // LoaddgvHSNhapDiem();
-             /*   if(dgvBangDiem.Rows.Count==0||dgvBangDiem.DataSource==null)
-                {
-                    MessageBox.Show("Học sinh lớp"+lblLop.Text+"đã được nhập điểm rồi !","Thông Báo!");
-                    NutNhan = true;
-                    LoadDSDiemHS();
-                    return;
-                }
-              */
-           /* if(TaoCot==0)
-            { 
-                //Thêm vào một cột điểm cho dgvBangDiem
-                    //Cột điểm miệng
-                    DataGridViewColumn clDiemMieng = new DataGridViewColumn();
-                    DataGridViewCell cell = new DataGridViewTextBoxCell();
-                    clDiemMieng.CellTemplate = cell;
-                    clDiemMieng.Name = "DiemMieng";
-                    dgvBangDiem.Columns.Add(clDiemMieng);
-                    dgvBangDiem.Columns["DiemMieng"].HeaderText = "Điểm miệng";
-                    //Cột điểm 15 phút
-                    DataGridViewColumn clDiem15Phut = new DataGridViewColumn();
-                    clDiem15Phut.CellTemplate = cell;
-                    clDiem15Phut.Name = "Diem15Phut";
-                    dgvBangDiem.Columns.Add(clDiem15Phut);
-                    dgvBangDiem.Columns["Diem15Phut"].HeaderText = "Điểm 15 phút";
-                    //Một tiết
-                    DataGridViewColumn cl1Tiet = new DataGridViewColumn();
-                    cl1Tiet.CellTemplate = cell;
-                    cl1Tiet.Name = "Diem1Tiet";
-                    dgvBangDiem.Columns.Add(cl1Tiet);
-                    dgvBangDiem.Columns["Diem1Tiet"].HeaderText = "Điểm 1 tiết";
-                
-                    //Thi
-                    DataGridViewColumn clDiemThi = new DataGridViewColumn();
-                    clDiemThi.CellTemplate = cell;
-                    clDiemThi.Name = "DiemThi";
-                    dgvBangDiem.Columns.Add(clDiemThi);
-                    dgvBangDiem.Columns["DiemThi"].HeaderText = "Điểm thi";
-                    TaoCot++;
-                    //Nút nhấn 
-                    NutNhan = false;
-            }
-            */
-               
+             
 
         }
          
         //hàm lưu điểm và database
         private void btnLuu_Click(object sender, EventArgs e)
         {
-          
-          /*  if (NutNhan == false)
-            {
-                try
+            if (NutNhan == true)//người dùng đã chọn nút nhập điểm và insert dữ liệu vào
                 {
-
-                    //Chuỗi kết nối 
-                    string sChuoiKetNoi = @"Data Source=(local);Initial Catalog=QuanLyHocSinh;Integrated Security=True";
-                    //Khởi tạo đối tượng connection
-                    SqlConnection con = new SqlConnection(sChuoiKetNoi);
-                    con.Open();
-                    for (int i = 0; i < dgvBangDiem.Rows.Count; i++)
+                    try
                     {
-                        //Tạo biến trung gian 
-                        int sMaMH = int.Parse(dgvBangDiem.Rows[i].Cells["MaMH"].Value.ToString());
-                        int sMaHS = int.Parse(dgvBangDiem.Rows[i].Cells["MaHS"].Value.ToString());
-                        int sDiemMieng = int.Parse(dgvBangDiem.Rows[i].Cells["DiemMieng"].Value.ToString());
-                        int sDiem15Phut = int.Parse(dgvBangDiem.Rows[i].Cells["Diem15Phut"].Value.ToString());
-                        int sDiem1Tiet = int.Parse(dgvBangDiem.Rows[i].Cells["Diem1Tiet"].Value.ToString());
-                        int sDiemThi = int.Parse(dgvBangDiem.Rows[i].Cells["DiemThi"].Value.ToString());
-                        int DTB = (sDiemMieng + sDiem15Phut + sDiem1Tiet * 2 + sDiemThi * 3) / 7;
-
-                        //Chuỗi truy vấn
-                        string sInsert = string.Format("INSERT INTO Diem values ({0},{1},{2},{3},{4},{5},{6})", sMaMH, sMaHS, sDiemMieng, sDiem15Phut, sDiem1Tiet, sDiemThi, DTB);
-                        SqlCommand cm = new SqlCommand(sInsert, con);
-                        cm.ExecuteNonQuery();
-
-                    }
-                    con.Close();
-                    NutNhan = true;
-                    MessageBox.Show("Nhập điểm thành công !", "Thông báo");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Nhập điểm thất bại!", "Thông báo");
-                }
-            }
-            else
-            {
-                try
-                {
-                    //Chuỗi kết nối 
-                    string sChuoiKetNoi = @"Data Source=(local);Initial Catalog=QuanLyHocSinh;Integrated Security=True";
-                    //Khởi tạo đối tượng connection
-                    SqlConnection con = new SqlConnection(sChuoiKetNoi);
-                    con.Open();
-                    for (int i = 0; i < dgvBangDiem.Rows.Count; i++)
-                    {
-                        //Tạo biến trung gian 
-                        int sMaMH = int.Parse(dgvBangDiem.Rows[i].Cells["MaMH"].Value.ToString());
-                        int sMaHS = int.Parse(dgvBangDiem.Rows[i].Cells["MaHS"].Value.ToString());
-                        int sDiemMieng = int.Parse(dgvBangDiem.Rows[i].Cells["DiemMieng"].Value.ToString());
-                        int sDiem15Phut = int.Parse(dgvBangDiem.Rows[i].Cells["Diem15Phut"].Value.ToString());
-                        int sDiem1Tiet = int.Parse(dgvBangDiem.Rows[i].Cells["Diem1Tiet"].Value.ToString());
-                        int sDiemThi = int.Parse(dgvBangDiem.Rows[i].Cells["DiemThi"].Value.ToString());
-                        int DTB = (sDiemMieng + sDiem15Phut + sDiem1Tiet * 2 + sDiemThi * 3) / 7;
-
-                        //Chuỗi truy vấn
-                        string sInsert = string.Format("Update Diem set DiemMieng={0},Diem15Phut={1},Diem1Tiet={2},DiemThi={3},DiemTB={4} where MaHS={5} and MaMH={6}", sDiemMieng, sDiem15Phut, sDiem1Tiet, sDiemThi, DTB,sMaHS,sMaMH);
-                        SqlCommand cm = new SqlCommand(sInsert, con);
-                        cm.ExecuteNonQuery();
-
-                    }
-                    con.Close();
-                    NutNhan = true;
-                    MessageBox.Show("Cập nhật thành công !", "Thông báo");
-                }
-                catch (Exception ex)
-                {
-                    MessageBox.Show("Cập nhật thất bại !", "Thông báo");
-                }
-            }
-           */
-
-
-            try
-            {
-                //Chuỗi kết nối 
-                string sChuoiKetNoi = @"Data Source=(local);Initial Catalog=QuanLyHocSinh;Integrated Security=True";
-                //Khởi tạo đối tượng connection
-                SqlConnection con = new SqlConnection(sChuoiKetNoi);
-                con.Open();
-                for (int i = 0; i < dgvBangDiem.Rows.Count; i++)
-                {
-                    int countKiemTraNhapDiem = 0;
-                    DataGridViewRow row =dgvBangDiem.Rows[i];
-                    //Kiểm tra xem người dùng đã chọn tính điểm trung bình ch 
-                        int sMaMH = int.Parse(row.Cells[6].Value.ToString());
-                        int sMaHS = int.Parse(row.Cells[0].Value.ToString());
-                        int sDiemMieng = int.Parse(row.Cells[2].Value.ToString());
-                        int sDiem15Phut = int.Parse(row.Cells[3].Value.ToString());
-                        int sDiem1Tiet = int.Parse(row.Cells[4].Value.ToString());
-                        int sDiemThi = int.Parse(row.Cells[5].Value.ToString());
-                        int sDiemTB = int.Parse(row.Cells[7].Value.ToString());
-
-                         //Kiểm tra xem điểm đã tồn tại hay chưa
-                        SqlDataAdapter daKiemTraNhapDiem;
-                         string sSelectKiemTraNhapDiem = @"Select * From Diem";
-                         daKiemTraNhapDiem = new SqlDataAdapter(sSelectKiemTraNhapDiem, sChuoiKetNoi);
-                        DataTable dtKiemTraNhapDiem = new DataTable();
-                        daKiemTraNhapDiem.Fill(dtKiemTraNhapDiem);
-                        if (dtKiemTraNhapDiem.Rows.Count != 0)
+                        //Chuỗi kết nối 
+                        string sChuoiKetNoi = @"Data Source=(local);Initial Catalog=QuanLyHocSinh;Integrated Security=True";
+                        //Khởi tạo đối tượng connection
+                        SqlConnection con = new SqlConnection(sChuoiKetNoi);
+                        con.Open();
+                        int sMaMH= layMaMH();
+                        for (int i = 0; i < dgvBangDiem.Rows.Count; i++)
                         {
-                            for (int j = 0; j < dtKiemTraNhapDiem.Rows.Count; j++)
-                            {
-                                int MaMH =int.Parse(dtKiemTraNhapDiem.Rows[i][1].ToString());
-                                int MaHs =int.Parse(dtKiemTraNhapDiem.Rows[i][2].ToString());
-                                if (sMaMH != MaMH && sMaHS != MaHs)
-                                {
-                                    countKiemTraNhapDiem++;
-                                }
-                            }
-                            if (countKiemTraNhapDiem == dtKiemTraNhapDiem.Rows.Count)//nếu như row điểm chưa có trong database
-                            {    //  Chuỗi truy vấn insert điểm
-                                //string sInsert = string.Format("INSERT INTO Diem values ({0},{1},{2},{3},{4},{5},{6})", sMaMH, sMaHS, sDiemMieng, sDiem15Phut, sDiem1Tiet, sDiemThi, sDiemTB);
-                                //SqlCommand cm = new SqlCommand(sInsert, con);
-                                //cm.ExecuteNonQuery();
-                                MessageBox.Show(countKiemTraNhapDiem.ToString());
-                            }
-                        }
-                        else
-                        {
+                            DataGridViewRow row = dgvBangDiem.Rows[i];
+                            //Kiểm tra xem người dùng đã chọn tính điểm trung bình ch 
+                          //  int sMaMH = int.Parse(row.Cells[2].Value.ToString());
+                            int sMaHS = int.Parse(row.Cells[0].Value.ToString());
+                            int sDiemMieng = int.Parse(row.Cells[4].Value.ToString());
+                            int sDiem15Phut = int.Parse(row.Cells[5].Value.ToString());
+                            int sDiem1Tiet = int.Parse(row.Cells[6].Value.ToString());
+                            int sDiemThi = int.Parse(row.Cells[7].Value.ToString());
+                            int sDiemTB = int.Parse(row.Cells[8].Value.ToString());
                             string sInsert = string.Format("INSERT INTO Diem values ({0},{1},{2},{3},{4},{5},{6})", sMaMH, sMaHS, sDiemMieng, sDiem15Phut, sDiem1Tiet, sDiemThi, sDiemTB);
                             SqlCommand cm = new SqlCommand(sInsert, con);
                             cm.ExecuteNonQuery();
+
                         }
-                       
-                      
-                }
-               con.Close();
-                MessageBox.Show("Lưu điểm thành công !", "Thông báo");
-               
-             
+                        con.Close();
+                        MessageBox.Show("Lưu điểm thành công !", "Thông báo");
+                        removeCot();
+                        for (int i = 0; i < dgvBangDiem.Rows.Count; i++)
+                        {
+                            dgvBangDiem.Rows.RemoveAt(i);
+                        }
+                        dgvBangDiem.DataSource = null;
+                        removeCot();
+                        loadDiem();
+
+
+                    }
+                    catch (Exception ex)
+                    {
+                        MessageBox.Show("Lưu điểm thất bại!", "Thông báo");
+                    }
             }
-            catch (Exception ex)
+            else
             {
-                MessageBox.Show("Lưu điểm thất bại!", "Thông báo");
+                //Tiến hành thục hiện cập nhật điểm
+                try
+                {
+                    //Chuỗi kết nối 
+                    string sChuoiKetNoi = @"Data Source=(local);Initial Catalog=QuanLyHocSinh;Integrated Security=True";
+                    //Khởi tạo đối tượng connection
+                    SqlConnection con = new SqlConnection(sChuoiKetNoi);
+                    con.Open();
+                   // int sMaMH = layMaMH();
+                    for (int i = 0; i < dgvBangDiem.Rows.Count; i++)
+                    {
+                        DataGridViewRow row = dgvBangDiem.Rows[i];
+                        //Kiểm tra xem người dùng đã chọn tính điểm trung bình ch 
+                       /*
+                        * int sMaMH = int.Parse(row.Cells[2].Value.ToString());
+                        int sMaHS = int.Parse(row.Cells[0].Value.ToString());
+                        int sDiemMieng = int.Parse(row.Cells[4].Value.ToString());
+                        int sDiem15Phut = int.Parse(row.Cells[5].Value.ToString());
+                        int sDiem1Tiet = int.Parse(row.Cells[6].Value.ToString());
+                        int sDiemThi = int.Parse(row.Cells[7].Value.ToString());
+                        int sDiemTB = int.Parse(row.Cells[8].Value.ToString());
+                        */
+                        int sMaMH = int.Parse(row.Cells[2].Value.ToString());
+                        int sMaHS = int.Parse(row.Cells[0].Value.ToString());
+                        int sDiemMieng = int.Parse(row.Cells[4].Value.ToString());
+                        int sDiem15Phut = int.Parse(row.Cells[5].Value.ToString());
+                        int sDiem1Tiet = int.Parse(row.Cells[6].Value.ToString());
+                        int sDiemThi = int.Parse(row.Cells[7].Value.ToString());
+                        int sDiemTB = int.Parse(row.Cells[8].Value.ToString());
+                        string sUpdate = string.Format("Update Diem set DiemMieng={0},Diem15Phut={1},Diem1Tiet={2},DiemThi={3},DiemTB={4} where MaHS={5} and MaMH={6}", sDiemMieng, sDiem15Phut, sDiem1Tiet, sDiemThi, sDiemTB, sMaHS, sMaMH);
+                        SqlCommand cm = new SqlCommand(sUpdate, con);
+                        cm.ExecuteNonQuery();
+
+                    }
+                    con.Close();
+                    MessageBox.Show("Cập nhật điểm thành công !", "Thông báo");
+                    removeCot();
+                    for (int i = 0; i < dgvBangDiem.Rows.Count; i++)
+                    {
+                        dgvBangDiem.Rows.RemoveAt(i);
+                    }
+                    dgvBangDiem.DataSource = null;
+                    removeCot();
+                    loadDiem();
+
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Cập nhật điểm thất bại!", "Thông báo");
+                }
+
             }
            
         }
@@ -661,14 +594,12 @@ namespace QuanLyHocSinh
                         for (int i = 0; i < dgvBangDiem.Rows.Count; i++)
                         {   
                             DataGridViewRow row = dgvBangDiem.Rows[i];
-                            int sMaMH = int.Parse(row.Cells[6].Value.ToString());
-                            int sMaHS = int.Parse(row.Cells[0].Value.ToString());
-                            int sDiemMieng = int.Parse(row.Cells[2].Value.ToString());
-                            int sDiem15Phut = int.Parse(row.Cells[3].Value.ToString());
-                            int sDiem1Tiet = int.Parse(row.Cells[4].Value.ToString());
-                            int sDiemThi = int.Parse(row.Cells[5].Value.ToString());
+                            int sDiemMieng = int.Parse(row.Cells[4].Value.ToString());
+                            int sDiem15Phut = int.Parse(row.Cells[5].Value.ToString());
+                            int sDiem1Tiet = int.Parse(row.Cells[6].Value.ToString());
+                            int sDiemThi = int.Parse(row.Cells[7].Value.ToString());
                             int DTB = (sDiemMieng + sDiem15Phut + sDiem1Tiet * 2 + sDiemThi * 3) / 7;
-                            dgvBangDiem.Rows[i].Cells[7].Value = DTB;
+                            dgvBangDiem.Rows[i].Cells[8].Value = DTB;
 
                         }
                     }
@@ -681,51 +612,62 @@ namespace QuanLyHocSinh
 
           //hàm load Điểm
         private void loadDiem(){
-            if (cmbKhoi.SelectedValue != null && !(cmbKhoi.SelectedValue is DataRowView)
-              && cmbHocKy.SelectedValue != null && !(cmbHocKy.SelectedValue is DataRowView)
-              && cmbLop.SelectedValue != null && !(cmbLop.SelectedValue is DataRowView)
-              && cmbNienKhoa.SelectedValue != null && !(cmbNienKhoa.SelectedValue is DataRowView)
-              && cmbMonHoc.SelectedValue != null && !(cmbMonHoc.SelectedValue is DataRowView)
-              )
+            try
             {
-                SqlDataAdapter daDiem;
-                lblMonHoc.Text = cmbMonHoc.Text;
-                //Chuỗi kết nối 
-                string sChuoiKetNoi = @"Data Source=(local);Initial Catalog=QuanLyHocSinh;Integrated Security=True";
-                //Chuỗi truy vấn
-                string sSelectDiem = string.Format(@"Select HocSinh.MaHS,HocSinh.HoTen,Diem.* From Diem,HocSinh,Lop,NienKhoa,Khoi,HocKy,MonHoc where HocSinh.MaLop=Lop.MaLop and Lop.MaKhoi=Khoi.MaKhoi and Lop.MaNamHoc=NienKhoa.MaNamHoc and MonHoc.MaHK=HocKy.MaHK and Diem.MaHS=HocSinh.MaHS and Diem.MaMH=MonHoc.MaMH and NienKhoa.MaNamHoc={0} and Lop.MaLop={1} and Khoi.MaKhoi={2} and MonHoc.MaMH={3} and HocKy.MaHK ={4} and MonHoc.MaMH={5}", cmbNienKhoa.SelectedValue, cmbLop.SelectedValue, cmbKhoi.SelectedValue, cmbMonHoc.SelectedValue, cmbHocKy.SelectedValue, cmbMonHoc.SelectedValue);
-                //Khởi tạo đối tượng SQLDataAdapter thực hiện truy vấn lấy dữ liệu từ database về
-                daDiem = new SqlDataAdapter(sSelectDiem, sChuoiKetNoi);
-                DataTable dt = new DataTable();
-                //Đổ dữ liệu vào 1 bảng trong datatable
-                daDiem.Fill(dt);
-                if (dt.Rows.Count != 0)
-                {
-                    //Nếu có điểm thì gán datasource
-                  //  dgvBangDiem.Columns
-                    dgvBangDiem.DataSource = null;
-                    dgvBangDiem.DataSource = dt;
-               //     dgvBangDiem.Columns["MaMH"].HeaderText = "Mã môn học";                   
-                  //  dgvBangDiem.Columns["MaHS"].HeaderText = "Mã học sinh";               
-                  //  dgvBangDiem.Columns["HoTen"].HeaderText = "Họ tên";    
-                    dgvBangDiem.Columns["MaHS1"].Visible = false;
-                  //  dgvBangDiem.Columns[0].Name = "Mã học sinh";
-                   // dgvBangDiem.Columns["DiemMieng"].HeaderText = "Điểm miệng";
-                   // dgvBangDiem.Columns["Diem15Phut"].HeaderText = "Điểm 15 phút";
-                  //  dgvBangDiem.Columns["Diem1Tiet"].HeaderText = "Điểm 1 tiết";
-                  //  dgvBangDiem.Columns["DiemThi"].HeaderText = "Điểm thi";
-                 //   dgvBangDiem.Columns["DiemTB"].HeaderText = "Điểm TB";
-                }
-                else
-                {
-                    MessageBox.Show("Chưa có học sinh nào đk nhập điểm !Vui lòng nhập điểm cho học sinh");
-                    dgvBangDiem.DataSource = null;
-                }
+                    if (cmbKhoi.SelectedValue != null && !(cmbKhoi.SelectedValue is DataRowView)
+                      && cmbHocKy.SelectedValue != null && !(cmbHocKy.SelectedValue is DataRowView)
+                      && cmbLop.SelectedValue != null && !(cmbLop.SelectedValue is DataRowView)
+                      && cmbNienKhoa.SelectedValue != null && !(cmbNienKhoa.SelectedValue is DataRowView)
+                      && cmbMonHoc.SelectedValue != null && !(cmbMonHoc.SelectedValue is DataRowView)
+                      )
+                    {
 
+                        lblMonHoc.Text = cmbMonHoc.Text;
+                        //Chuỗi kết nối 
+                        string sChuoiKetNoi = @"Data Source=(local);Initial Catalog=QuanLyHocSinh;Integrated Security=True";
+                        //Chuỗi truy vấn
+                        string sSelectDiem = string.Format(@"Select HocSinh.MaHS,HocSinh.HoTen,Diem.* From Diem,HocSinh,Lop,NienKhoa,Khoi,HocKy,MonHoc where HocSinh.MaLop=Lop.MaLop and Lop.MaKhoi=Khoi.MaKhoi and Lop.MaNamHoc=NienKhoa.MaNamHoc and MonHoc.MaHK=HocKy.MaHK and Diem.MaHS=HocSinh.MaHS and Diem.MaMH=MonHoc.MaMH and NienKhoa.MaNamHoc={0} and Lop.MaLop={1} and Khoi.MaKhoi={2} and MonHoc.MaMH={3} and HocKy.MaHK ={4} and MonHoc.MaMH={5}", cmbNienKhoa.SelectedValue, cmbLop.SelectedValue, cmbKhoi.SelectedValue, cmbMonHoc.SelectedValue, cmbHocKy.SelectedValue, cmbMonHoc.SelectedValue);
+                        //Khởi tạo đối tượng SQLDataAdapter thực hiện truy vấn lấy dữ liệu từ database về
+                        daDiem = new SqlDataAdapter(sSelectDiem, sChuoiKetNoi);
+                        daDiem.Fill(ds, "tblDiem");
+                        dv = new DataView(ds.Tables["tblDiem"]);
+                        //dgvDanhSachHocSinh.DataSource = ds.Tables["tblHocSinh"];
+                        DataTable dt = new DataTable();
+                        //Đổ dữ liệu vào 1 bảng trong datatable
+                        daDiem.Fill(dt);
+                        if (dt.Rows.Count != 0)
+                        {
+                            //Nếu có điểm thì gán datasource
+                            //  dgvBangDiem.Columns
+                            dgvBangDiem.DataSource = null;
+                            dgvBangDiem.DataSource = dt;
+                            // dgvBangDiem.DataSource = dv;
+                            dgvBangDiem.Columns[2].HeaderText = "Mã môn học";                   
+                            dgvBangDiem.Columns[0].HeaderText = "Mã học sinh";               
+                             dgvBangDiem.Columns[1].HeaderText = "Họ tên";    
+                            dgvBangDiem.Columns[3].Visible = false;
+                            dgvBangDiem.Columns[4].HeaderText = "Điểm miệng";
+                            dgvBangDiem.Columns[5].HeaderText = "Điểm 15 phút";
+                           dgvBangDiem.Columns[6].HeaderText = "Điểm 1 tiết";
+                           dgvBangDiem.Columns[7].HeaderText = "Điểm thi";
+                          dgvBangDiem.Columns[8].HeaderText = "Điểm TB";
+
+                        }
+                        else
+                        {
+                            MessageBox.Show("Chưa có học sinh nào đk nhập điểm !Vui lòng nhập điểm cho học sinh");
+                            dgvBangDiem.DataSource = null;
+                        }
+
+                    }
+                    else
+                    {
+                        dgvBangDiem.DataSource = null;
+                    }
             }
-            else
+            catch (Exception ex)
             {
-                dgvBangDiem.DataSource = null;
+                MessageBox.Show("Không load đk điểm!");
             }
 
         }
@@ -832,6 +774,10 @@ namespace QuanLyHocSinh
             {
                 dgvBangDiem.Columns.Remove("MaHS");
             }
+            if (dgvBangDiem.Columns.Contains("MaHS1"))
+            {
+                dgvBangDiem.Columns.Remove("MaHS1");
+            }
             if (dgvBangDiem.Columns.Contains("Diem15Phut"))
             {
                 dgvBangDiem.Columns.Remove("Diem15Phut");
@@ -866,26 +812,62 @@ namespace QuanLyHocSinh
 
         private void createColumns()
         {
-            dgvBangDiem.ColumnCount =8;
+            dgvBangDiem.ColumnCount =9;
             dgvBangDiem.Columns[0].Name = "Mã học sinh";
             dgvBangDiem.Columns[0].DataPropertyName = "MaHS";
             dgvBangDiem.Columns[1].Name = "Họ tên";
             dgvBangDiem.Columns[1].DataPropertyName = "HoTen";
-            dgvBangDiem.Columns[2].Name = "Điểm miệng";
-            dgvBangDiem.Columns[2].DataPropertyName = "DiemMieng";
-            dgvBangDiem.Columns[3].Name = "Điểm 15 phút";
-            dgvBangDiem.Columns[3].DataPropertyName = "Diem15Phut";
-            dgvBangDiem.Columns[4].Name = "Điểm 1 tiết";
-            dgvBangDiem.Columns[4].DataPropertyName = "Diem1Tiet";
-            dgvBangDiem.Columns[5].Name = "Điểm thi";
-            dgvBangDiem.Columns[5].DataPropertyName = "DiemThi";
-            dgvBangDiem.Columns[6].Name = "Mã môn học";
-            dgvBangDiem.Columns[6].DataPropertyName = "MaMH";
+            dgvBangDiem.Columns[2].Name = "Mã môn học";
+            dgvBangDiem.Columns[2].DataPropertyName = "MaMH";
+            dgvBangDiem.Columns[3].Name = "Mã HS1";
+            dgvBangDiem.Columns[3].DataPropertyName = "MaHS1";
+            dgvBangDiem.Columns[4].Name = "Điểm miệng";
+            dgvBangDiem.Columns[4].DataPropertyName = "DiemMieng";
+            dgvBangDiem.Columns[5].Name = "Điểm 15 phút";
+            dgvBangDiem.Columns[5].DataPropertyName = "Diem15Phut";
+            dgvBangDiem.Columns[6].Name = "Điểm 1 tiết";
+            dgvBangDiem.Columns[6].DataPropertyName = "Diem1Tiet";
+            dgvBangDiem.Columns[7].Name = "Điểm thi";
+            dgvBangDiem.Columns[7].DataPropertyName = "DiemThi";
+            dgvBangDiem.Columns[8].Name = "Điểm trung bình";
+            dgvBangDiem.Columns[8].DataPropertyName = "DiemTB";
+            dgvBangDiem.Columns[3].Visible = false;
+            dgvBangDiem.Columns[2].Visible = false;
+            
+          /*  dgvBangDiem.ColumnCount = 8;
+            dgvBangDiem.Columns[0].Name = "Mã học sinh";
+            dgvBangDiem.Columns[0].DataPropertyName = "MaHS";
+            dgvBangDiem.Columns[1].Name = "Họ tên";
+            dgvBangDiem.Columns[1].DataPropertyName = "HoTen";
+            dgvBangDiem.Columns[2].Name = "Mã môn học";
+            dgvBangDiem.Columns[2].DataPropertyName = "MaMH";
+            dgvBangDiem.Columns[3].Name = "Điểm miệng";
+            dgvBangDiem.Columns[3].DataPropertyName = "DiemMieng";
+            dgvBangDiem.Columns[4].Name = "Điểm 15 phút";
+            dgvBangDiem.Columns[4].DataPropertyName = "Diem15Phut";
+            dgvBangDiem.Columns[5].Name = "Điểm 1 tiết";
+            dgvBangDiem.Columns[5].DataPropertyName = "Diem1Tiet";
+            dgvBangDiem.Columns[6].Name = "Điểm thi";
+            dgvBangDiem.Columns[6].DataPropertyName = "DiemThi";
             dgvBangDiem.Columns[7].Name = "Điểm trung bình";
             dgvBangDiem.Columns[7].DataPropertyName = "DiemTB";
+           */
         }
 
-        //Hàm kiểm tra xem điểm đã tồn tại hay chưa
+        //Hàm lấy thông tin MaMH
+        private int layMaMH()
+        {
+                SqlDataAdapter daMH;
+                string sChuoiKetNoi = @"Data Source=(local);Initial Catalog=QuanLyHocSinh;Integrated Security=True";
+                //Chuỗi truy vấn học sinh đã nhập điểm
+                string sSelectMaMH = @"Select MaMH From MonHoc Where MaHK=" + cmbHocKy.SelectedValue + "and MaKhoi=" + cmbKhoi.SelectedValue;
+                //Khởi tạo đối tượng SQLDataAdapter thực hiện truy vấn lấy dữ liệu từ database về
+                daMH = new SqlDataAdapter(sSelectMaMH, sChuoiKetNoi);
+                DataTable dt = new DataTable();
+                //Đổ dữ liệu vào 1 bảng trong datatable
+                daMH.Fill(dt);
+                return int.Parse(dt.Rows[0][0].ToString());
+        }
         //Hàm nhấn nút thoát
             private void btnThoat_Click(object sender, EventArgs e)
             {
@@ -895,6 +877,46 @@ namespace QuanLyHocSinh
             }
 
             private void dgvBangDiem_CellContentClick(object sender, DataGridViewCellEventArgs e)
+            {
+
+            }
+            
+           //Hàm xóa 1 dòng dữ liệu
+            private void btXoa_Click(object sender, EventArgs e)
+            {
+                if (NutNhan == false)//xóa khi đã nhập điểm đầy đủ
+                {
+                        try
+                        {
+                            DataGridViewRow rowSelected = dgvBangDiem.SelectedRows[0];
+                            //Chuỗi kết nối 
+                            string sChuoiKetNoi = @"Data Source=(local);Initial Catalog=QuanLyHocSinh;Integrated Security=True";
+                            //Khởi tạo đối tượng connection
+                            SqlConnection con = new SqlConnection(sChuoiKetNoi);
+                            con.Open();
+                            string sMaMH =rowSelected.Cells[2].Value.ToString();
+                            string sMaHS = rowSelected.Cells[0].Value.ToString();
+                            string sDelete = @"Delete From Diem Where MaMH="+sMaMH+"and MaHS="+sMaHS;
+                            SqlCommand cm = new SqlCommand(sDelete, con);
+                            cm.ExecuteNonQuery();
+                           con.Close();
+                            dgvBangDiem.Rows.Remove(rowSelected);
+                            MessageBox.Show("Xóa điểm thành công!", "Thông báo");
+
+
+                        }
+                        catch (Exception ex)
+                        {
+                            MessageBox.Show("Xóa điểm thất bại!", "Thông báo");
+                        }
+                    }
+                else
+                {
+                    MessageBox.Show("Xóa điểm thất bại!", "Thông báo");
+                }
+            }
+
+            private void grbNhapDiem_Enter(object sender, EventArgs e)
             {
 
             }
