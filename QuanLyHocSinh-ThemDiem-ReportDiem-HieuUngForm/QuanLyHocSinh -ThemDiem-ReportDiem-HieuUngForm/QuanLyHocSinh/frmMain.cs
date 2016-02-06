@@ -97,5 +97,11 @@ namespace QuanLyHocSinh
             frLopHoc fr = new frLopHoc();
             fr.ShowDialog();
         }
+
+        private void btnMonHoc_Click(object sender, EventArgs e)
+        {
+            frMonHoc fr = new frMonHoc();
+            fr.ShowDialog();
+        }
     }
 }

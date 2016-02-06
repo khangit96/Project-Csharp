@@ -32,6 +32,8 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmQuanLyHocSinh));
             this.lblTieuDe = new System.Windows.Forms.Label();
             this.gbThongTinHocSinh = new System.Windows.Forms.GroupBox();
+            this.cbNamHoc = new System.Windows.Forms.ComboBox();
+            this.label1 = new System.Windows.Forms.Label();
             this.txtDiaChi = new System.Windows.Forms.TextBox();
             this.cmbLop = new System.Windows.Forms.ComboBox();
             this.rdbGioiTinhNu = new System.Windows.Forms.RadioButton();
@@ -73,6 +75,8 @@
             // 
             // gbThongTinHocSinh
             // 
+            this.gbThongTinHocSinh.Controls.Add(this.cbNamHoc);
+            this.gbThongTinHocSinh.Controls.Add(this.label1);
             this.gbThongTinHocSinh.Controls.Add(this.txtDiaChi);
             this.gbThongTinHocSinh.Controls.Add(this.cmbLop);
             this.gbThongTinHocSinh.Controls.Add(this.rdbGioiTinhNu);
@@ -88,25 +92,45 @@
             this.gbThongTinHocSinh.Controls.Add(this.lblMaHS);
             this.gbThongTinHocSinh.Font = new System.Drawing.Font("Segoe UI", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.gbThongTinHocSinh.ForeColor = System.Drawing.Color.White;
-            this.gbThongTinHocSinh.Location = new System.Drawing.Point(88, 48);
+            this.gbThongTinHocSinh.Location = new System.Drawing.Point(69, 37);
             this.gbThongTinHocSinh.Name = "gbThongTinHocSinh";
-            this.gbThongTinHocSinh.Size = new System.Drawing.Size(706, 175);
+            this.gbThongTinHocSinh.Size = new System.Drawing.Size(791, 175);
             this.gbThongTinHocSinh.TabIndex = 1;
             this.gbThongTinHocSinh.TabStop = false;
             this.gbThongTinHocSinh.Text = "Thông tin học sinh";
+            this.gbThongTinHocSinh.Enter += new System.EventHandler(this.gbThongTinHocSinh_Enter);
+            // 
+            // cbNamHoc
+            // 
+            this.cbNamHoc.FormattingEnabled = true;
+            this.cbNamHoc.Location = new System.Drawing.Point(405, 75);
+            this.cbNamHoc.Name = "cbNamHoc";
+            this.cbNamHoc.Size = new System.Drawing.Size(139, 21);
+            this.cbNamHoc.TabIndex = 12;
+            this.cbNamHoc.SelectedIndexChanged += new System.EventHandler(this.cbNamHoc_SelectedIndexChanged);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(307, 73);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(80, 23);
+            this.label1.TabIndex = 11;
+            this.label1.Text = "Năm học";
             // 
             // txtDiaChi
             // 
-            this.txtDiaChi.Location = new System.Drawing.Point(460, 104);
+            this.txtDiaChi.Location = new System.Drawing.Point(624, 60);
             this.txtDiaChi.Multiline = true;
             this.txtDiaChi.Name = "txtDiaChi";
-            this.txtDiaChi.Size = new System.Drawing.Size(139, 40);
+            this.txtDiaChi.Size = new System.Drawing.Size(157, 40);
             this.txtDiaChi.TabIndex = 10;
             // 
             // cmbLop
             // 
             this.cmbLop.FormattingEnabled = true;
-            this.cmbLop.Location = new System.Drawing.Point(460, 77);
+            this.cmbLop.Location = new System.Drawing.Point(405, 126);
             this.cmbLop.Name = "cmbLop";
             this.cmbLop.Size = new System.Drawing.Size(139, 21);
             this.cmbLop.TabIndex = 9;
@@ -115,7 +139,7 @@
             // 
             this.rdbGioiTinhNu.AutoSize = true;
             this.rdbGioiTinhNu.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbGioiTinhNu.Location = new System.Drawing.Point(548, 27);
+            this.rdbGioiTinhNu.Location = new System.Drawing.Point(499, 26);
             this.rdbGioiTinhNu.Name = "rdbGioiTinhNu";
             this.rdbGioiTinhNu.Size = new System.Drawing.Size(51, 27);
             this.rdbGioiTinhNu.TabIndex = 8;
@@ -128,7 +152,7 @@
             this.rdbGioiTinhNam.AutoSize = true;
             this.rdbGioiTinhNam.Checked = true;
             this.rdbGioiTinhNam.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.rdbGioiTinhNam.Location = new System.Drawing.Point(460, 27);
+            this.rdbGioiTinhNam.Location = new System.Drawing.Point(411, 26);
             this.rdbGioiTinhNam.Name = "rdbGioiTinhNam";
             this.rdbGioiTinhNam.Size = new System.Drawing.Size(65, 27);
             this.rdbGioiTinhNam.TabIndex = 8;
@@ -163,7 +187,7 @@
             // 
             this.lblDiachi.AutoSize = true;
             this.lblDiachi.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblDiachi.Location = new System.Drawing.Point(355, 122);
+            this.lblDiachi.Location = new System.Drawing.Point(556, 69);
             this.lblDiachi.Name = "lblDiachi";
             this.lblDiachi.Size = new System.Drawing.Size(62, 23);
             this.lblDiachi.TabIndex = 5;
@@ -173,7 +197,7 @@
             // 
             this.lblLop.AutoSize = true;
             this.lblLop.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblLop.Location = new System.Drawing.Point(355, 77);
+            this.lblLop.Location = new System.Drawing.Point(317, 122);
             this.lblLop.Name = "lblLop";
             this.lblLop.Size = new System.Drawing.Size(38, 23);
             this.lblLop.TabIndex = 4;
@@ -183,7 +207,7 @@
             // 
             this.lblGioiTinh.AutoSize = true;
             this.lblGioiTinh.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lblGioiTinh.Location = new System.Drawing.Point(355, 31);
+            this.lblGioiTinh.Location = new System.Drawing.Point(307, 28);
             this.lblGioiTinh.Name = "lblGioiTinh";
             this.lblGioiTinh.Size = new System.Drawing.Size(75, 23);
             this.lblGioiTinh.TabIndex = 3;
@@ -405,6 +429,8 @@
         private System.Windows.Forms.GroupBox gbTimKiem;
         private System.Windows.Forms.Button btnTimKiem;
         private System.Windows.Forms.TextBox txtTimKiem;
+        private System.Windows.Forms.ComboBox cbNamHoc;
+        private System.Windows.Forms.Label label1;
     }
 }
 

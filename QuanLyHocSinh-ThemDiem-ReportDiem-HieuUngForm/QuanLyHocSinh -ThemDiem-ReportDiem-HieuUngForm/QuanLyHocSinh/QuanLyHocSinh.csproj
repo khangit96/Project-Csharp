@@ -66,6 +66,12 @@
     <Compile Include="frmNienkhoa.Designer.cs">
       <DependentUpon>frmNienkhoa.cs</DependentUpon>
     </Compile>
+    <Compile Include="frMonHoc.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="frMonHoc.Designer.cs">
+      <DependentUpon>frMonHoc.cs</DependentUpon>
+    </Compile>
     <Compile Include="frmQuanLyHocSinh.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -105,6 +111,9 @@
     </EmbeddedResource>
     <EmbeddedResource Include="frmNienkhoa.resx">
       <DependentUpon>frmNienkhoa.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="frMonHoc.resx">
+      <DependentUpon>frMonHoc.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="frmQuanLyHocSinh.resx">
       <DependentUpon>frmQuanLyHocSinh.cs</DependentUpon>

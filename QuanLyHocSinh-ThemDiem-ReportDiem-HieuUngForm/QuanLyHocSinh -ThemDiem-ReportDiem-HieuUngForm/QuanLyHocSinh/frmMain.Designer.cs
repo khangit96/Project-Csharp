@@ -136,7 +136,7 @@
             this.btnNamHoc.Name = "btnNamHoc";
             this.btnNamHoc.Size = new System.Drawing.Size(169, 110);
             this.btnNamHoc.TabIndex = 6;
-            this.btnNamHoc.Text = "Niên khóa";
+            this.btnNamHoc.Text = "Năm Học";
             this.btnNamHoc.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.btnNamHoc.UseVisualStyleBackColor = false;
             this.btnNamHoc.Click += new System.EventHandler(this.btnNamHoc_Click);
@@ -189,6 +189,7 @@
             this.btnMonHoc.Text = "Môn học";
             this.btnMonHoc.TextAlign = System.Drawing.ContentAlignment.BottomLeft;
             this.btnMonHoc.UseVisualStyleBackColor = false;
+            this.btnMonHoc.Click += new System.EventHandler(this.btnMonHoc_Click);
             // 
             // btnHocSinh
             // 
