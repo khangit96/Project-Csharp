@@ -1,0 +1,9 @@
+C:\Users\Administrator\Desktop\Project C#\Demo_Snake\Demo_Snake\bin\Debug\Demo_Snake.exe.config
+C:\Users\Administrator\Desktop\Project C#\Demo_Snake\Demo_Snake\bin\Debug\Demo_Snake.exe
+C:\Users\Administrator\Desktop\Project C#\Demo_Snake\Demo_Snake\bin\Debug\Demo_Snake.pdb
+C:\Users\Administrator\Desktop\Project C#\Demo_Snake\Demo_Snake\obj\Debug\Demo_Snake.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\Project C#\Demo_Snake\Demo_Snake\obj\Debug\Demo_Snake.Form1.resources
+C:\Users\Administrator\Desktop\Project C#\Demo_Snake\Demo_Snake\obj\Debug\Demo_Snake.Properties.Resources.resources
+C:\Users\Administrator\Desktop\Project C#\Demo_Snake\Demo_Snake\obj\Debug\Demo_Snake.csproj.GenerateResource.Cache
+C:\Users\Administrator\Desktop\Project C#\Demo_Snake\Demo_Snake\obj\Debug\Demo_Snake.exe
+C:\Users\Administrator\Desktop\Project C#\Demo_Snake\Demo_Snake\obj\Debug\Demo_Snake.pdb
