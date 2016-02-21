@@ -35,7 +35,7 @@
             this.toolStripStatusLabel2 = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusScore = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.button1 = new System.Windows.Forms.Button();
+            this.btNewGame = new System.Windows.Forms.Button();
             this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
             this.statusStrip1 = new System.Windows.Forms.StatusStrip();
@@ -48,9 +48,14 @@
             this.thoiGian = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lbInfor = new System.Windows.Forms.Label();
+            this.btInstruction = new System.Windows.Forms.Button();
+            this.btExit = new System.Windows.Forms.Button();
+            this.btHighScore = new System.Windows.Forms.Button();
+            this.axWindowsMediaPlayer1 = new AxWMPLib.AxWindowsMediaPlayer();
             this.statusStrip1.SuspendLayout();
             this.statusStrip2.SuspendLayout();
             this.statusStrip3.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).BeginInit();
             this.SuspendLayout();
             // 
             // timerRun
@@ -83,17 +88,19 @@
             this.toolStripStatusLabel3.Size = new System.Drawing.Size(43, 17);
             this.toolStripStatusLabel3.Text = "Level:1";
             // 
-            // button1
+            // btNewGame
             // 
-            this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button1.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button1.ForeColor = System.Drawing.Color.Transparent;
-            this.button1.Location = new System.Drawing.Point(313, 79);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(194, 53);
-            this.button1.TabIndex = 3;
-            this.button1.Text = "Play";
-            this.button1.UseVisualStyleBackColor = true;
+            this.btNewGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btNewGame.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btNewGame.ForeColor = System.Drawing.Color.Transparent;
+            this.btNewGame.Location = new System.Drawing.Point(300, 117);
+            this.btNewGame.Name = "btNewGame";
+            this.btNewGame.Size = new System.Drawing.Size(194, 53);
+            this.btNewGame.TabIndex = 3;
+            this.btNewGame.Text = "New Game";
+            this.btNewGame.UseVisualStyleBackColor = true;
+            this.btNewGame.Click += new System.EventHandler(this.btNewGame_Click);
+            this.btNewGame.MouseHover += new System.EventHandler(this.btNewGame_MouseHover);
             // 
             // toolStripStatusLabel4
             // 
@@ -181,14 +188,66 @@
             // lbInfor
             // 
             this.lbInfor.AutoSize = true;
-            this.lbInfor.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.lbInfor.FlatStyle = System.Windows.Forms.FlatStyle.Popup;
             this.lbInfor.Font = new System.Drawing.Font("Consolas", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.lbInfor.Location = new System.Drawing.Point(308, 166);
+            this.lbInfor.ForeColor = System.Drawing.Color.Transparent;
+            this.lbInfor.Location = new System.Drawing.Point(306, 66);
             this.lbInfor.Name = "lbInfor";
             this.lbInfor.Size = new System.Drawing.Size(197, 37);
             this.lbInfor.TabIndex = 7;
             this.lbInfor.Text = "Game Over!";
             this.lbInfor.Click += new System.EventHandler(this.lbInfor_Click);
+            // 
+            // btInstruction
+            // 
+            this.btInstruction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btInstruction.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btInstruction.ForeColor = System.Drawing.Color.Transparent;
+            this.btInstruction.Location = new System.Drawing.Point(300, 176);
+            this.btInstruction.Name = "btInstruction";
+            this.btInstruction.Size = new System.Drawing.Size(194, 53);
+            this.btInstruction.TabIndex = 8;
+            this.btInstruction.Text = "Instruction";
+            this.btInstruction.UseVisualStyleBackColor = true;
+            this.btInstruction.Click += new System.EventHandler(this.btInstruction_Click);
+            this.btInstruction.MouseHover += new System.EventHandler(this.btInstruction_MouseHover);
+            // 
+            // btExit
+            // 
+            this.btExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btExit.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btExit.ForeColor = System.Drawing.Color.Transparent;
+            this.btExit.Location = new System.Drawing.Point(300, 294);
+            this.btExit.Name = "btExit";
+            this.btExit.Size = new System.Drawing.Size(194, 53);
+            this.btExit.TabIndex = 9;
+            this.btExit.Text = "Exit";
+            this.btExit.UseVisualStyleBackColor = true;
+            this.btExit.Click += new System.EventHandler(this.btExit_Click);
+            this.btExit.MouseHover += new System.EventHandler(this.btExit_MouseHover);
+            // 
+            // btHighScore
+            // 
+            this.btHighScore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btHighScore.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btHighScore.ForeColor = System.Drawing.Color.Transparent;
+            this.btHighScore.Location = new System.Drawing.Point(300, 235);
+            this.btHighScore.Name = "btHighScore";
+            this.btHighScore.Size = new System.Drawing.Size(194, 53);
+            this.btHighScore.TabIndex = 10;
+            this.btHighScore.Text = "High Score";
+            this.btHighScore.UseVisualStyleBackColor = true;
+            this.btHighScore.Click += new System.EventHandler(this.btHighScore_Click);
+            this.btHighScore.MouseHover += new System.EventHandler(this.btHighScore_MouseHover);
+            // 
+            // axWindowsMediaPlayer1
+            // 
+            this.axWindowsMediaPlayer1.Enabled = true;
+            this.axWindowsMediaPlayer1.Location = new System.Drawing.Point(761, 424);
+            this.axWindowsMediaPlayer1.Name = "axWindowsMediaPlayer1";
+            this.axWindowsMediaPlayer1.OcxState = ((System.Windows.Forms.AxHost.State)(resources.GetObject("axWindowsMediaPlayer1.OcxState")));
+            this.axWindowsMediaPlayer1.Size = new System.Drawing.Size(75, 23);
+            this.axWindowsMediaPlayer1.TabIndex = 11;
             // 
             // Form1
             // 
@@ -196,17 +255,22 @@
             this.BackColor = System.Drawing.Color.ForestGreen;
             this.BackgroundImage = global::Demo_Snake.Properties.Resources.Background;
             this.ClientSize = new System.Drawing.Size(785, 425);
+            this.Controls.Add(this.axWindowsMediaPlayer1);
+            this.Controls.Add(this.btHighScore);
+            this.Controls.Add(this.btExit);
+            this.Controls.Add(this.btInstruction);
             this.Controls.Add(this.lbInfor);
             this.Controls.Add(this.statusStrip3);
             this.Controls.Add(this.statusStrip2);
             this.Controls.Add(this.statusStrip1);
-            this.Controls.Add(this.button1);
+            this.Controls.Add(this.btNewGame);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedSingle;
+            this.ForeColor = System.Drawing.Color.White;
+            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.FixedDialog;
             this.Icon = ((System.Drawing.Icon)(resources.GetObject("$this.Icon")));
             this.Name = "Form1";
+            this.SizeGripStyle = System.Windows.Forms.SizeGripStyle.Show;
             this.Text = "My snake";
             this.Load += new System.EventHandler(this.Form1_Load);
             this.Click += new System.EventHandler(this.Form1_Click);
@@ -218,6 +282,7 @@
             this.statusStrip2.PerformLayout();
             this.statusStrip3.ResumeLayout(false);
             this.statusStrip3.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)(this.axWindowsMediaPlayer1)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -230,7 +295,7 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel2;
         private System.Windows.Forms.ToolStripStatusLabel statusScore;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
-        private System.Windows.Forms.Button button1;
+        private System.Windows.Forms.Button btNewGame;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel4;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel5;
         private System.Windows.Forms.StatusStrip statusStrip1;
@@ -243,6 +308,10 @@
         private System.Windows.Forms.ToolStripStatusLabel thoiGian;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lbInfor;
+        private System.Windows.Forms.Button btInstruction;
+        private System.Windows.Forms.Button btExit;
+        private System.Windows.Forms.Button btHighScore;
+        private AxWMPLib.AxWindowsMediaPlayer axWindowsMediaPlayer1;
     }
 }
 

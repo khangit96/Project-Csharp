@@ -12,7 +12,7 @@ namespace Demo_Snake
         private int x, y, width, height;//x,y là tọa độ của food trên form,width,height là kích thước của food;
       //  private SolidBrush brush;//khai báo cọ vẽ
         public Rectangle foodRec;
-        Image image;//hình ảnh food
+        Image smallFood,bigFood;//hình ảnh food
 
         //Hàm khởi tạo
         public Food(Random randFood,int w,int h)
@@ -21,7 +21,8 @@ namespace Demo_Snake
             y = randFood.Next(0, 29) * 10;
             //cọ vẽ
            // brush = new SolidBrush(Color.White);
-            image = Properties.Resources.apple;
+            smallFood = Properties.Resources.apple;
+            bigFood = Properties.Resources.bigFood;
             //kích thước của food
             width = w;
             height = h;
@@ -36,13 +37,22 @@ namespace Demo_Snake
             y = randFood.Next(0, 29) * 10;
         }
 
-        //Hàm vẽ food
+        //Hàm vẽ thức ăn nhỏ
         public void drawFood(Graphics paper)
         {
             foodRec.X = x;
             foodRec.Y = y;
           //  paper.FillEllipse(brush,foodRec);
-            paper.DrawImage(image,foodRec);
+            paper.DrawImage(smallFood, foodRec);
+        }
+        //Hàm vẽ thức ăn lớn
+        public void drawBigFood(Graphics paper)
+        {
+            foodRec.X = x;
+            foodRec.Y = y;
+            //  paper.FillEllipse(brush,foodRec);
+            paper.DrawImage(bigFood,foodRec);
+
         }
       
     }

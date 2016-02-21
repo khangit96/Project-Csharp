@@ -5,6 +5,7 @@ using System.Text;
 using System.Drawing;
 using System.Threading.Tasks;
 using System.Linq;
+using System.Windows.Forms;
 
 namespace Demo_Snake
 {
@@ -13,8 +14,7 @@ namespace Demo_Snake
         private SolidBrush brush;
         public int x, y, width, height;
         private Rectangle[] snakeRec;
-        Image image;
-        Image rightHead;
+        Image image, left, down, rightHead, leftHead, up, downHead,upHead;
         public Rectangle[] SnakeRec
         {
             get
@@ -29,7 +29,13 @@ namespace Demo_Snake
             snakeRec = new Rectangle[3];
           //  brush = new SolidBrush(Color.Red);
             image = Properties.Resources._52;
-            rightHead = Properties.Resources.dauNgangPhai;
+            left = Properties.Resources.left;
+            rightHead = Properties.Resources.rightHead;
+            leftHead = Properties.Resources.leftHead;
+            down = Properties.Resources.down;
+            downHead = Properties.Resources.downHead;
+            up = Properties.Resources.upHead;
+            upHead = Properties.Resources.up;
             x = 350; y = 200; width = 20; height = 20;
             for (int i = 0; i < snakeRec.Length; i++)
             {
@@ -38,24 +44,13 @@ namespace Demo_Snake
             }
         }
        
-        //vẽ rắn
+        //vẽ lại con rắn bên phải
         public void drawSnake(Graphics paper)
         {
-            int count =1;//biến này dùng để tạo đầu cho con rắn
-            foreach (Rectangle r in snakeRec)
+            paper.DrawImage(rightHead, snakeRec[0]);//vẽ đầu phải
+            for (int i = 1; i < snakeRec.Length; i++)
             {
-                // paper.FillEllipse(brush,r);
-          
-                if (count == 1)
-                {
-                    paper.DrawImage(rightHead, r);
-                    count = 0;
-                }
-                else
-                {
-                    paper.DrawImage(image, r);
-                }
-               
+                paper.DrawImage(image, snakeRec[i]);//vẽ thân phải
             }
         }
 
@@ -69,7 +64,33 @@ namespace Demo_Snake
             
             
         }
-
+        //vẽ lại hình ảnh con rắn khi di chuyển qua trái
+        public void drawLeft(Graphics paper)
+        {
+            paper.DrawImage(leftHead, snakeRec[0]);//vẽ hình ảnh đầu trái
+            for (int i = 1; i < snakeRec.Length; i++)
+            {
+                paper.DrawImage(left, snakeRec[i]);//vẽ hình ảnh thân trái
+            }
+        }
+        //vẽ lại hình ảnh con rắn khi di chuyển xuống
+        public void drawDown(Graphics paper)
+        {
+            paper.DrawImage(downHead, snakeRec[0]);//vẽ hình ảnh đầu dưới
+            for (int i = 1; i < snakeRec.Length; i++)
+            {
+                paper.DrawImage(down, snakeRec[i]);//vẽ hình ảnh thân dưới
+            }
+        }
+        //vẽ lại hình ảnh con rắn khi di chuyển lên
+        public void drawUp(Graphics paper)
+        {
+            paper.DrawImage(up, snakeRec[0]);//vẽ hình ảnh đầu trên
+            for (int i = 1; i < snakeRec.Length; i++)
+            {
+                paper.DrawImage(upHead, snakeRec[i]);//vẽ hình ảnh thân trên
+            }
+        }
         //Hàm di chuyển xuống
         public void moveDown()
         {
