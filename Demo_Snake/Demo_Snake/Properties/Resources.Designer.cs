@@ -101,15 +101,6 @@ namespace Demo_Snake.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
-        /// </summary>
-        internal static System.IO.UnmanagedMemoryStream background1 {
-            get {
-                return ResourceManager.GetStream("background1", resourceCulture);
-            }
-        }
-        
-        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap bigFood {
@@ -134,6 +125,16 @@ namespace Demo_Snake.Properties {
         internal static System.IO.UnmanagedMemoryStream button_3 {
             get {
                 return ResourceManager.GetStream("button_3", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap dauNgangPhai {
+            get {
+                object obj = ResourceManager.GetObject("dauNgangPhai", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
@@ -239,6 +240,16 @@ namespace Demo_Snake.Properties {
         internal static System.IO.UnmanagedMemoryStream smallFood {
             get {
                 return ResourceManager.GetStream("smallFood", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Snake {
+            get {
+                object obj = ResourceManager.GetObject("Snake", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         

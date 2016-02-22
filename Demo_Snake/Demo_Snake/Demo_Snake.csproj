@@ -84,17 +84,17 @@
     <None Include="Resources\2.png" />
   </ItemGroup>
   <ItemGroup>
-    <None Include="Resources\background.wav" />
     <None Include="Resources\button-3.wav" />
-    <None Include="Resources\pause.wav" />
-    <None Include="Resources\upHead.png" />
-    <None Include="Resources\downHead.png" />
-    <None Include="Resources\left.png" />
-    <None Include="Resources\rightHead.png" />
-    <None Include="Resources\leftHead.png" />
-    <None Include="Resources\up.png" />
-    <None Include="Resources\down.png" />
     <None Include="Resources\Blip_Select13.wav" />
+    <None Include="Resources\pause.wav" />
+    <None Include="Resources\leftHead.png" />
+    <None Include="Resources\downHead.png" />
+    <None Include="Resources\down.png" />
+    <None Include="Resources\upHead.png" />
+    <None Include="Resources\up.png" />
+    <None Include="Resources\Snake.png" />
+    <None Include="Resources\rightHead.png" />
+    <None Include="Resources\left.png" />
     <None Include="Resources\bigFood.png" />
     <None Include="Resources\gameOver.wav" />
     <None Include="Resources\dauNgangPhai.png" />
@@ -109,25 +109,6 @@
   </ItemGroup>
   <ItemGroup>
     <Folder Include="Musics\" />
-  </ItemGroup>
-  <ItemGroup>
-    <COMReference Include="AxWMPLib">
-      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
-      <VersionMajor>1</VersionMajor>
-      <VersionMinor>0</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>aximp</WrapperTool>
-      <Isolated>False</Isolated>
-    </COMReference>
-    <COMReference Include="WMPLib">
-      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
-      <VersionMajor>1</VersionMajor>
-      <VersionMinor>0</VersionMinor>
-      <Lcid>0</Lcid>
-      <WrapperTool>tlbimp</WrapperTool>
-      <Isolated>False</Isolated>
-      <EmbedInteropTypes>True</EmbedInteropTypes>
-    </COMReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 

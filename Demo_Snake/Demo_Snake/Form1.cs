@@ -11,6 +11,7 @@ using System.Media;
 using System.Threading;
 
 
+
 namespace Demo_Snake
 {
     public partial class Form1 : Form
@@ -32,71 +33,51 @@ namespace Demo_Snake
          Random randBigFood = new Random();
          Food food;
          Food bigFood;
+         //Biến lưu thời gian hide/show bigFood
+         int bigFoodTime = 0;
         //Khởi tạo biến check xem rắn đã vẽ rắn hay chưa
          Boolean check = false;
         //Biến lưu thời gian chơi;
          int time=0;
-        //Biến lưu thời gian hide/show bigFood
-         int bigFoodTime = 0;
-        //khai báo biến kiểm tra để ẩn snake and small food,big food
-         int hide =0;
+         int hide = 1;
          int once = 1;//biến kiểm tra để vẽ con rắn bến phải lần đầu
-        //kiểm tra để pause
-         int pause =1;
+         //kiểm tra để pause
+         int pause = 1;
          
         public Form1()
-        {  
+        {
             InitializeComponent();
             food = new Food(randFood,20,20);
             bigFood = new Food(randBigFood,50,50);
             MaximizeBox = false;//không cho phóng to form
-           
         
         }
 
         private void Form1_Load(object sender, EventArgs e)
         {
-          
             lbInfor.Text = "";
-             showButton();
-           // hideButton();
-        
+            hide = 0;//ẩn rắn vs food
+            //lbGo.Hide();//ẩn 3 2 1 GO
 
-          
-           
         }
-        //hide button
-        public void hideButton()
-        {
-              btNewGame.Hide();
-              btExit.Hide();
-              btInstruction.Hide();
-              btHighScore.Hide();
-              btNewGame.Enabled=false;
-              btExit.Enabled = false;
-              btInstruction.Enabled = false;
-              btHighScore.Enabled = false;
-              hide = 1;//hiện rắn
-             
-        }
-        //show button
-        public void showButton()
-        {
-              hide =0;//ẩn rắn
-             playBackgroundSound();//play nhạc nền
-            /*btNewGame.Hide();
-            btExit.Hide();
-            btInstruction.Hide();
-            btHighScore.Hide();*/
-           
-        }
+     
         private void Form1_Click(object sender, EventArgs e)
         {
   
         }
-
+        public void hideButton()
+        {
+            btExit.Enabled = false;
+            btHighScore.Enabled = false;
+            btInstruction.Enabled = false;
+            btNewGame.Enabled = false;
+            btNewGame.Hide();
+            btInstruction.Hide();
+            btHighScore.Hide();
+            btExit.Hide();
+        }
         private void Form1_Paint(object sender, PaintEventArgs e)
-        {  
+        {
             paper = e.Graphics;
             if (hide != 0)
             {
@@ -105,8 +86,8 @@ namespace Demo_Snake
                 {
                     snake.drawSnake(paper);
                 }
-              
-                
+
+
             }
             if (right == true)
             {
@@ -124,7 +105,7 @@ namespace Demo_Snake
             {
                 snake.drawUp(paper);
             }
-          
+
             //vẽ food
             if (foodCount == 3)//nếu như mà rắn ăn đủ 2 thực phẩm
             {
@@ -134,7 +115,7 @@ namespace Demo_Snake
                     check = true;
                 }
             }
-            if (hide !=0)
+            if (hide != 0)
             {
                 food.drawFood(paper);
             }
@@ -143,10 +124,22 @@ namespace Demo_Snake
               
               
         }
-       
 
         private void Form1_KeyDown(object sender, KeyEventArgs e)
         {   
+          /*  //Sự kiện bắm phím cách để chơi
+            if (e.KeyData == Keys.Space)
+            {
+                lbInfor.Text = "";
+                timerRun.Enabled = true;//bắt đầu time
+                timer1.Enabled = true;
+                left = false;
+                right = false;
+                up = false;
+                down = false;
+               
+            }
+           */
             //Sự kiện bắm phím cách để chơi
             if (e.KeyData == Keys.Space)
             {   //kiểm tra lần đầu chơi game
@@ -157,38 +150,38 @@ namespace Demo_Snake
                     timerRun.Enabled = true;//bắt đầu time
                     timer1.Enabled = true;//bắt đầu thời gian chơi
                     //kiểm tra nếu lần đầu chạy game thì sẽ cho tự động di chuyến sang phải
-                    if (left == false && down == false&&up == false)
+                    if (left == false && down == false && up == false)
                     {
                         right = true;
                     }
-                   
+
                     once = 0;//kiểm tra để vẽ con rắn bên phải lần đầu(trường hợp once=0 thì sẽ ko vẽ
                     pause = 0;
                 }
-                 //kiểm tra để dừng lại 
+                //kiểm tra để dừng lại 
                 else if (pause == 0)
                 {
                     timerRun.Enabled = false;//ngừng di chuyển rắn
                     timer1.Enabled = false;//ngừng  thời gian chơi
                     pause = 1;//tiếp tục game
-                    lbInfor.Top = 200;
-                    lbInfor.Left=350;
+                    lbInfor.Top = 180;
+                    lbInfor.Left = 350;
                     lbInfor.Text = "Pause";
                     playGamePauseSound();
                     //kiểm tra nếu rắn đang di chuyển sang trái,lên trên hoặc xuống dưới thì sẽ tiếp tục di chuyển theo hướng đó
-                    if (left == true||down==true||up==true)
+                    if (left == true || down == true || up == true)
                     {
                         right = false;
                     }
 
                 }
-               
-               
+
+
             }
             //sự kiện nhấn phím up
             if (e.KeyData == Keys.Up && down ==false)
             {
-                timerRun.Start();
+                //timerRun.Start();
                 up = true;
                 down = false;
                 left = false;
@@ -197,20 +190,18 @@ namespace Demo_Snake
             }
             //sự kiện nhấn phím down
             if (e.KeyData == Keys.Down && up == false)
-            {
-              
+            {  
                 up = false;
                 down = true;
                 left = false;
                 right = false;
-               // timerRun.Start();
                 once = 0;
+               // timerRun.Start();
 
             }
             //sự kiện nhấn phím left
             if (e.KeyData == Keys.Left && right == false)
             {
-               
                 up = false;
                 down = false;
                 left = true;
@@ -222,12 +213,11 @@ namespace Demo_Snake
             //sự kiện nhấn phím right
             if (e.KeyData == Keys.Right && left == false)
             {
-                
                 up = false;
                 down = false;
-                once = 0;
                 left = false;
                 right = true;
+                once = 0;
               //  timerRun.Start();
 
             }
@@ -246,7 +236,6 @@ namespace Demo_Snake
             }
             if (left == true)//nhấn phím left
             {
-               
                 snake.moveLeft();
 
             }
@@ -299,10 +288,11 @@ namespace Demo_Snake
              
             }
             //nếu sau 10s mà ko ăn thực phẩm lớn thì sẽ biến mất
-            if (bigFoodTime ==10)
+            if (bigFoodTime == 10)
             {
                 foodCount = 0;
                 bigFoodTime = 0;
+                fakeFoodCount = 0;
                 check = false;
             }
 
@@ -317,13 +307,13 @@ namespace Demo_Snake
             for (int i = 1; i < snake.SnakeRec.Length; i++)
             {   
                 //nếu rắn tự cắn thân mình
-             /*   if (snake.SnakeRec[0].IntersectsWith(snake.SnakeRec[i]))
+                /*if (snake.SnakeRec[0].IntersectsWith(snake.SnakeRec[i]))
                 {
                     playDiedSound();//Play sound khi chết
                     Thread.Sleep(2000);
                     Restart();
                 }
-                */
+                 */
             }
             //nếu rắn đâm vào 2 đường biên ngang
             if (snake.SnakeRec[0].Y <-10 || snake.SnakeRec[0].Y >465)
@@ -344,24 +334,33 @@ namespace Demo_Snake
         public void Restart()
         {
             string score = Score.ToString();//gán điểm của người chơi
-            string Time=time.ToString();//gán thời gian của người chơi
+            string playTime = time.ToString();//lưu thời gian chơi
             timerRun.Enabled = false;
             timer1.Enabled = false;
-            hide = 0;//ẩn thực phẩm nhỏ
-            bigFoodTime = 0;
             diemSo.Text = "0";
             Score = 0;
-            time = 0;
             foodCount = 0;
+            time = 0;
             thoiGian.Text = "0";
-           // MessageBox.Show("Snake died!");
-            lbInfor.Top = 130;//chỉnh lại tọa độ của lbInfor
-            lbInfor.Text = "Game Over!"+"\n"+"Score: "+score+"\n"+"Time: "+Time+"\n"+"Level: 1";
-            pause = 1;//khi game chết thì sẽ chạy lại con rắn bên phải
-            playGameOverSound();
-            right = true;
+            hide = 0;//ẩn rắn vs food
+            pause = 1;//để khi nhắn lại phím cách sẽ play again
+            lbInfor.Top = 110;
+            lbInfor.Left = 300;
+            lbInfor.Text = "Game Over!"+"\n"+"Score: "+score+"\n"+"Time: "+playTime+"\n"+"Level: 1";
+            right = false;
             left = false; down = false; up = false;
+            playGameOverSound();
+            //Hiện button chơi lại khi thua
+            ShowPlayAgainButton();
+           
             snake = new Snake();
+        }
+        public void ShowPlayAgainButton()
+        {
+            btNewGame.Text = "Play Again";
+            btNewGame.Enabled = true;
+            btNewGame.Show();
+            btNewGame.Top = 250;
         }
         private void toolTip1_Popup(object sender, PopupEventArgs e)
         {
@@ -430,6 +429,19 @@ namespace Demo_Snake
 
             }
         }
+        //âm thanh khi pause game
+        public void playGamePauseSound()
+        {
+            try
+            {
+                SoundPlayer simpleSound = new SoundPlayer(Properties.Resources.pause);
+                simpleSound.Play();
+            }
+            catch (Exception e)
+            {
+
+            }
+        }
         //Play âm thanh khi select
         private void playSelectSound()
         {
@@ -443,33 +455,6 @@ namespace Demo_Snake
 
             }
         }
-        //Play âm thanh khi game pause
-        private void playGamePauseSound()
-        {
-            try
-            {
-                SoundPlayer simpleSound = new SoundPlayer(Properties.Resources.pause);
-                simpleSound.Play();
-            }
-            catch (Exception e)
-            {
-
-            }
-        }
-        //âm thanh nền game
-        private void playBackgroundSound()
-        {
-            try
-            {
-                SoundPlayer simpleSound = new SoundPlayer(Properties.Resources.background1);
-                simpleSound.Play();
-            }
-            catch (Exception e)
-            {
-
-            }
-        }
-
         private void timer1_Tick(object sender, EventArgs e)
         {
             bigFoodTime++;
@@ -484,61 +469,95 @@ namespace Demo_Snake
 
         private void btNewGame_Click(object sender, EventArgs e)
         {
-          
-         
-            hideButton();//ẩn button khi bắt đầu game
-            playSelectSound();
-            hide = 1;
-            lbInfor.Text = "";
-            timerRun.Enabled = true;//bắt đầu time
-            timer1.Enabled = true;
-            left = false;
-            right = true;
-            up = false;
-            down = false;
+
         }
 
-        //exit app
         private void btExit_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
-        //hover New Game
+
+        private void btHighScore_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btInstruction_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btNewGame_Click_1(object sender, EventArgs e)
+        {
+            newGame();
+            
+        }
+        //Hàm tạo mới trò chơi
+        public void newGame()
+        {
+            hideButton();
+            //Hiện chữ 3
+        /*    lbGo.Show();
+            Thread.Sleep(1000);
+            lbGo.Hide();
+
+            //Hiện chữ 2
+            lbGo.Text = "2";
+            lbGo.Show();
+            Thread.Sleep(1000);
+            lbGo.Hide();
+            //Hiện chữ 1
+            lbGo.Text = "1";
+            lbGo.Show();
+            Thread.Sleep(1000);
+            lbGo.Hide();
+            //Hiện chư Go!
+            lbGo.Text = "Go";
+            lbGo.Show();
+            Thread.Sleep(1000);
+            lbGo.Hide();
+         */
+            //
+            left = false; right = true; up = false; down = false;
+            hide = 1;//biến này để check ẩn button
+            lbInfor.Text = "";//gán thông tin =""
+            timerRun.Enabled = true;//bắt đầu time
+            timer1.Enabled = true;//bắt đầu thời gian ch
+            once = 0;//kiểm tra để vẽ con rắn bên phải lần đầu(trường hợp once=0 thì sẽ ko vẽ
+            pause = 0;
+          
+            
+         
+        }
+
         private void btNewGame_MouseHover(object sender, EventArgs e)
         {
             playSelectSound();
         }
 
-        //hover Instruction
         private void btInstruction_MouseHover(object sender, EventArgs e)
         {
             playSelectSound();
 
         }
-        //hover Exit
-        private void btExit_MouseHover(object sender, EventArgs e)
-        {
-            playSelectSound();
-        }
 
-        //hove high Score
         private void btHighScore_MouseHover(object sender, EventArgs e)
         {
             playSelectSound();
 
         }
 
-        private void btInstruction_Click(object sender, EventArgs e)
+        private void btExit_MouseHover(object sender, EventArgs e)
         {
             playSelectSound();
+
         }
 
-        private void btHighScore_Click(object sender, EventArgs e)
+        private void label1_Click(object sender, EventArgs e)
         {
-            playSelectSound();
+           
         }
 
-      
     
     }
 }

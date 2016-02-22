@@ -5,7 +5,6 @@ using System.Text;
 using System.Drawing;
 using System.Threading.Tasks;
 using System.Linq;
-using System.Windows.Forms;
 
 namespace Demo_Snake
 {
@@ -14,7 +13,7 @@ namespace Demo_Snake
         private SolidBrush brush;
         public int x, y, width, height;
         private Rectangle[] snakeRec;
-        Image image, left, down, rightHead, leftHead, up, downHead,upHead;
+        Image image, left, down, rightHead, leftHead, up, downHead, upHead;
         public Rectangle[] SnakeRec
         {
             get
@@ -43,7 +42,7 @@ namespace Demo_Snake
                 x -= 10;
             }
         }
-       
+
         //vẽ lại con rắn bên phải
         public void drawSnake(Graphics paper)
         {
@@ -53,6 +52,7 @@ namespace Demo_Snake
                 paper.DrawImage(image, snakeRec[i]);//vẽ thân phải
             }
         }
+
 
         //Vẽ rắn trong lúc di chuyển
         public void drawSnakeRun()
@@ -91,6 +91,7 @@ namespace Demo_Snake
                 paper.DrawImage(upHead, snakeRec[i]);//vẽ hình ảnh thân trên
             }
         }
+
         //Hàm di chuyển xuống
         public void moveDown()
         {
