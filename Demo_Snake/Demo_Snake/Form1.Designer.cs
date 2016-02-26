@@ -51,6 +51,8 @@
             this.btExit = new System.Windows.Forms.Button();
             this.btInstruction = new System.Windows.Forms.Button();
             this.btNewGame = new System.Windows.Forms.Button();
+            this.btMainMenu = new System.Windows.Forms.Button();
+            this.btResume = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
             this.statusStrip2.SuspendLayout();
             this.statusStrip3.SuspendLayout();
@@ -237,12 +239,42 @@
             this.btNewGame.Click += new System.EventHandler(this.btNewGame_Click_1);
             this.btNewGame.MouseHover += new System.EventHandler(this.btNewGame_MouseHover);
             // 
+            // btMainMenu
+            // 
+            this.btMainMenu.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btMainMenu.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btMainMenu.ForeColor = System.Drawing.Color.Transparent;
+            this.btMainMenu.Location = new System.Drawing.Point(535, 166);
+            this.btMainMenu.Name = "btMainMenu";
+            this.btMainMenu.Size = new System.Drawing.Size(194, 53);
+            this.btMainMenu.TabIndex = 15;
+            this.btMainMenu.Text = "Main Menu";
+            this.btMainMenu.UseVisualStyleBackColor = true;
+            this.btMainMenu.Click += new System.EventHandler(this.btMainMenu_Click);
+            this.btMainMenu.MouseHover += new System.EventHandler(this.btMainMenu_MouseHover);
+            // 
+            // btResume
+            // 
+            this.btResume.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btResume.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btResume.ForeColor = System.Drawing.Color.Transparent;
+            this.btResume.Location = new System.Drawing.Point(535, 225);
+            this.btResume.Name = "btResume";
+            this.btResume.Size = new System.Drawing.Size(194, 53);
+            this.btResume.TabIndex = 16;
+            this.btResume.Text = "Resume";
+            this.btResume.UseVisualStyleBackColor = true;
+            this.btResume.Click += new System.EventHandler(this.btResume_Click);
+            this.btResume.MouseHover += new System.EventHandler(this.btResume_MouseHover);
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.ForestGreen;
             this.BackgroundImage = global::Demo_Snake.Properties.Resources.Background;
             this.ClientSize = new System.Drawing.Size(785, 425);
+            this.Controls.Add(this.btResume);
+            this.Controls.Add(this.btMainMenu);
             this.Controls.Add(this.btHighScore);
             this.Controls.Add(this.btExit);
             this.Controls.Add(this.btInstruction);
@@ -296,6 +328,8 @@
         private System.Windows.Forms.Button btExit;
         private System.Windows.Forms.Button btInstruction;
         private System.Windows.Forms.Button btNewGame;
+        private System.Windows.Forms.Button btMainMenu;
+        private System.Windows.Forms.Button btResume;
     }
 }
 
