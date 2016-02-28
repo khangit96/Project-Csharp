@@ -37,14 +37,6 @@
             this.toolStripStatusLabel3 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel4 = new System.Windows.Forms.ToolStripStatusLabel();
             this.toolStripStatusLabel5 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
-            this.rf = new System.Windows.Forms.ToolStripStatusLabel();
-            this.diemSo = new System.Windows.Forms.ToolStripStatusLabel();
-            this.statusStrip2 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel6 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.statusStrip3 = new System.Windows.Forms.StatusStrip();
-            this.toolStripStatusLabel7 = new System.Windows.Forms.ToolStripStatusLabel();
-            this.thoiGian = new System.Windows.Forms.ToolStripStatusLabel();
             this.timer1 = new System.Windows.Forms.Timer(this.components);
             this.lbInfor = new System.Windows.Forms.Label();
             this.btHighScore = new System.Windows.Forms.Button();
@@ -53,6 +45,14 @@
             this.btNewGame = new System.Windows.Forms.Button();
             this.btMainMenu = new System.Windows.Forms.Button();
             this.btResume = new System.Windows.Forms.Button();
+            this.lbHightScore = new System.Windows.Forms.Label();
+            this.statusStrip1 = new System.Windows.Forms.StatusStrip();
+            this.diemSo = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusStrip2 = new System.Windows.Forms.StatusStrip();
+            this.thoiGian = new System.Windows.Forms.ToolStripStatusLabel();
+            this.statusStrip3 = new System.Windows.Forms.StatusStrip();
+            this.Level = new System.Windows.Forms.ToolStripStatusLabel();
+            this.btContinue = new System.Windows.Forms.Button();
             this.statusStrip1.SuspendLayout();
             this.statusStrip2.SuspendLayout();
             this.statusStrip3.SuspendLayout();
@@ -100,72 +100,6 @@
             this.toolStripStatusLabel5.Size = new System.Drawing.Size(13, 17);
             this.toolStripStatusLabel5.Text = "0";
             // 
-            // statusStrip1
-            // 
-            this.statusStrip1.Dock = System.Windows.Forms.DockStyle.None;
-            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.rf,
-            this.diemSo});
-            this.statusStrip1.Location = new System.Drawing.Point(24, 9);
-            this.statusStrip1.Name = "statusStrip1";
-            this.statusStrip1.Size = new System.Drawing.Size(66, 22);
-            this.statusStrip1.TabIndex = 4;
-            this.statusStrip1.Text = "statusStrip1";
-            // 
-            // rf
-            // 
-            this.rf.ForeColor = System.Drawing.SystemColors.ButtonHighlight;
-            this.rf.Name = "rf";
-            this.rf.Size = new System.Drawing.Size(36, 17);
-            this.rf.Text = "Score";
-            // 
-            // diemSo
-            // 
-            this.diemSo.Name = "diemSo";
-            this.diemSo.Size = new System.Drawing.Size(13, 17);
-            this.diemSo.Text = "0";
-            // 
-            // statusStrip2
-            // 
-            this.statusStrip2.Dock = System.Windows.Forms.DockStyle.None;
-            this.statusStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel6});
-            this.statusStrip2.Location = new System.Drawing.Point(685, 9);
-            this.statusStrip2.Name = "statusStrip2";
-            this.statusStrip2.Size = new System.Drawing.Size(60, 22);
-            this.statusStrip2.TabIndex = 5;
-            this.statusStrip2.Text = "statusStrip2";
-            // 
-            // toolStripStatusLabel6
-            // 
-            this.toolStripStatusLabel6.Name = "toolStripStatusLabel6";
-            this.toolStripStatusLabel6.Size = new System.Drawing.Size(43, 17);
-            this.toolStripStatusLabel6.Text = "Level:1";
-            // 
-            // statusStrip3
-            // 
-            this.statusStrip3.Dock = System.Windows.Forms.DockStyle.None;
-            this.statusStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripStatusLabel7,
-            this.thoiGian});
-            this.statusStrip3.Location = new System.Drawing.Point(346, 9);
-            this.statusStrip3.Name = "statusStrip3";
-            this.statusStrip3.Size = new System.Drawing.Size(67, 22);
-            this.statusStrip3.TabIndex = 6;
-            this.statusStrip3.Text = "statusStrip3";
-            // 
-            // toolStripStatusLabel7
-            // 
-            this.toolStripStatusLabel7.Name = "toolStripStatusLabel7";
-            this.toolStripStatusLabel7.Size = new System.Drawing.Size(37, 17);
-            this.toolStripStatusLabel7.Text = "Time:";
-            // 
-            // thoiGian
-            // 
-            this.thoiGian.Name = "thoiGian";
-            this.thoiGian.Size = new System.Drawing.Size(13, 17);
-            this.thoiGian.Text = "0";
-            // 
             // timer1
             // 
             this.timer1.Interval = 1000;
@@ -188,7 +122,7 @@
             this.btHighScore.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btHighScore.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btHighScore.ForeColor = System.Drawing.Color.Transparent;
-            this.btHighScore.Location = new System.Drawing.Point(314, 225);
+            this.btHighScore.Location = new System.Drawing.Point(314, 260);
             this.btHighScore.Name = "btHighScore";
             this.btHighScore.Size = new System.Drawing.Size(194, 53);
             this.btHighScore.TabIndex = 14;
@@ -202,7 +136,7 @@
             this.btExit.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btExit.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btExit.ForeColor = System.Drawing.Color.Transparent;
-            this.btExit.Location = new System.Drawing.Point(314, 284);
+            this.btExit.Location = new System.Drawing.Point(314, 319);
             this.btExit.Name = "btExit";
             this.btExit.Size = new System.Drawing.Size(194, 53);
             this.btExit.TabIndex = 13;
@@ -216,7 +150,7 @@
             this.btInstruction.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btInstruction.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btInstruction.ForeColor = System.Drawing.Color.Transparent;
-            this.btInstruction.Location = new System.Drawing.Point(314, 166);
+            this.btInstruction.Location = new System.Drawing.Point(314, 201);
             this.btInstruction.Name = "btInstruction";
             this.btInstruction.Size = new System.Drawing.Size(194, 53);
             this.btInstruction.TabIndex = 12;
@@ -230,7 +164,7 @@
             this.btNewGame.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btNewGame.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btNewGame.ForeColor = System.Drawing.Color.Transparent;
-            this.btNewGame.Location = new System.Drawing.Point(314, 107);
+            this.btNewGame.Location = new System.Drawing.Point(314, 142);
             this.btNewGame.Name = "btNewGame";
             this.btNewGame.Size = new System.Drawing.Size(194, 53);
             this.btNewGame.TabIndex = 11;
@@ -267,12 +201,95 @@
             this.btResume.Click += new System.EventHandler(this.btResume_Click);
             this.btResume.MouseHover += new System.EventHandler(this.btResume_MouseHover);
             // 
+            // lbHightScore
+            // 
+            this.lbHightScore.AutoSize = true;
+            this.lbHightScore.BackColor = System.Drawing.Color.ForestGreen;
+            this.lbHightScore.Font = new System.Drawing.Font("Consolas", 24F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbHightScore.Location = new System.Drawing.Point(240, 163);
+            this.lbHightScore.Name = "lbHightScore";
+            this.lbHightScore.Size = new System.Drawing.Size(251, 37);
+            this.lbHightScore.TabIndex = 17;
+            this.lbHightScore.Text = "Hight Score: ";
+            // 
+            // statusStrip1
+            // 
+            this.statusStrip1.Dock = System.Windows.Forms.DockStyle.None;
+            this.statusStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.diemSo});
+            this.statusStrip1.Location = new System.Drawing.Point(42, 9);
+            this.statusStrip1.Name = "statusStrip1";
+            this.statusStrip1.Size = new System.Drawing.Size(65, 22);
+            this.statusStrip1.TabIndex = 21;
+            this.statusStrip1.Text = "statusStrip1";
+            this.statusStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.statusStrip1_ItemClicked_1);
+            // 
+            // diemSo
+            // 
+            this.diemSo.Name = "diemSo";
+            this.diemSo.Size = new System.Drawing.Size(48, 17);
+            this.diemSo.Text = "Score: 0";
+            // 
+            // statusStrip2
+            // 
+            this.statusStrip2.Dock = System.Windows.Forms.DockStyle.None;
+            this.statusStrip2.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.thoiGian});
+            this.statusStrip2.Location = new System.Drawing.Point(348, 9);
+            this.statusStrip2.Name = "statusStrip2";
+            this.statusStrip2.Size = new System.Drawing.Size(63, 22);
+            this.statusStrip2.TabIndex = 22;
+            this.statusStrip2.Text = "statusStrip2";
+            // 
+            // thoiGian
+            // 
+            this.thoiGian.Name = "thoiGian";
+            this.thoiGian.Size = new System.Drawing.Size(46, 17);
+            this.thoiGian.Text = "Time: 0";
+            // 
+            // statusStrip3
+            // 
+            this.statusStrip3.Dock = System.Windows.Forms.DockStyle.None;
+            this.statusStrip3.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.Level});
+            this.statusStrip3.Location = new System.Drawing.Point(635, 9);
+            this.statusStrip3.Name = "statusStrip3";
+            this.statusStrip3.Size = new System.Drawing.Size(63, 22);
+            this.statusStrip3.TabIndex = 23;
+            this.statusStrip3.Text = "statusStrip3";
+            // 
+            // Level
+            // 
+            this.Level.Name = "Level";
+            this.Level.Size = new System.Drawing.Size(46, 17);
+            this.Level.Text = "Level: 1";
+            // 
+            // btContinue
+            // 
+            this.btContinue.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btContinue.Font = new System.Drawing.Font("Consolas", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btContinue.ForeColor = System.Drawing.Color.Transparent;
+            this.btContinue.Location = new System.Drawing.Point(314, 83);
+            this.btContinue.Name = "btContinue";
+            this.btContinue.Size = new System.Drawing.Size(194, 53);
+            this.btContinue.TabIndex = 24;
+            this.btContinue.Text = "Continue";
+            this.btContinue.UseVisualStyleBackColor = true;
+            this.btContinue.Click += new System.EventHandler(this.btContinue_Click);
+            this.btContinue.MouseHover += new System.EventHandler(this.btContinue_MouseHover);
+            this.btContinue.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btContinue_MouseMove);
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.ForestGreen;
             this.BackgroundImage = global::Demo_Snake.Properties.Resources.Background;
             this.ClientSize = new System.Drawing.Size(785, 425);
+            this.Controls.Add(this.btContinue);
+            this.Controls.Add(this.statusStrip3);
+            this.Controls.Add(this.statusStrip2);
+            this.Controls.Add(this.statusStrip1);
+            this.Controls.Add(this.lbHightScore);
             this.Controls.Add(this.btResume);
             this.Controls.Add(this.btMainMenu);
             this.Controls.Add(this.btHighScore);
@@ -280,9 +297,6 @@
             this.Controls.Add(this.btInstruction);
             this.Controls.Add(this.btNewGame);
             this.Controls.Add(this.lbInfor);
-            this.Controls.Add(this.statusStrip3);
-            this.Controls.Add(this.statusStrip2);
-            this.Controls.Add(this.statusStrip1);
             this.DoubleBuffered = true;
             this.Font = new System.Drawing.Font("Microsoft Sans Serif", 8.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.ForeColor = System.Drawing.SystemColors.ButtonFace;
@@ -314,14 +328,6 @@
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel3;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel4;
         private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel5;
-        private System.Windows.Forms.StatusStrip statusStrip1;
-        private System.Windows.Forms.ToolStripStatusLabel rf;
-        private System.Windows.Forms.ToolStripStatusLabel diemSo;
-        private System.Windows.Forms.StatusStrip statusStrip2;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel6;
-        private System.Windows.Forms.StatusStrip statusStrip3;
-        private System.Windows.Forms.ToolStripStatusLabel toolStripStatusLabel7;
-        private System.Windows.Forms.ToolStripStatusLabel thoiGian;
         private System.Windows.Forms.Timer timer1;
         private System.Windows.Forms.Label lbInfor;
         private System.Windows.Forms.Button btHighScore;
@@ -330,6 +336,14 @@
         private System.Windows.Forms.Button btNewGame;
         private System.Windows.Forms.Button btMainMenu;
         private System.Windows.Forms.Button btResume;
+        private System.Windows.Forms.Label lbHightScore;
+        private System.Windows.Forms.StatusStrip statusStrip1;
+        private System.Windows.Forms.ToolStripStatusLabel diemSo;
+        private System.Windows.Forms.StatusStrip statusStrip2;
+        private System.Windows.Forms.ToolStripStatusLabel thoiGian;
+        private System.Windows.Forms.StatusStrip statusStrip3;
+        private System.Windows.Forms.ToolStripStatusLabel Level;
+        private System.Windows.Forms.Button btContinue;
     }
 }
 

@@ -45,7 +45,9 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Food.cs" />
-    <Compile Include="Form1.cs" />
+    <Compile Include="Form1.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Include="Form1.Designer.cs">
       <DependentUpon>Form1.cs</DependentUpon>
     </Compile>
@@ -103,6 +105,7 @@
     <None Include="Images\Background.png" />
     <None Include="Resources\52.png" />
     <None Include="Resources\apple.png" />
+    <None Include="data.txt" />
     <Content Include="Resources\Background.png" />
   </ItemGroup>
   <ItemGroup>

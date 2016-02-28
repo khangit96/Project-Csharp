@@ -129,6 +129,15 @@ namespace Demo_Snake.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized string similar to nguyen hồ duy khang.
+        /// </summary>
+        internal static string data {
+            get {
+                return ResourceManager.GetString("data", resourceCulture);
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
         internal static System.Drawing.Bitmap dauNgangPhai {

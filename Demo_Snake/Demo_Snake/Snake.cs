@@ -23,9 +23,9 @@ namespace Demo_Snake
         }
         
         //Hàm khởi tạo rắn
-        public Snake()
+        public Snake(int snakeLength, int xCoordinate,int yCoordinate)
         {
-            snakeRec = new Rectangle[3];
+            snakeRec = new Rectangle[snakeLength];
           //  brush = new SolidBrush(Color.Red);
             image = Properties.Resources._52;
             left = Properties.Resources.left;
@@ -35,7 +35,7 @@ namespace Demo_Snake
             downHead = Properties.Resources.downHead;
             up = Properties.Resources.upHead;
             upHead = Properties.Resources.up;
-            x = 350; y = 200; width = 20; height = 20;
+            x = xCoordinate; y = yCoordinate; width = 20; height = 20;
             for (int i = 0; i < snakeRec.Length; i++)
             {
                 snakeRec[i] = new Rectangle(x, y, width, height);

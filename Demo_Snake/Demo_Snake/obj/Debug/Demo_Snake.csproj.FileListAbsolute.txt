@@ -27,3 +27,6 @@ C:\Users\Administrator\Desktop\Project Quản Lý Học Sinh\Project-Csharp\Demo
 C:\Users\Administrator\Desktop\Project Quản Lý Học Sinh\Project-Csharp\Demo_Snake\Demo_Snake\obj\Debug\Demo_Snake.csproj.GenerateResource.Cache
 C:\Users\Administrator\Desktop\Project Quản Lý Học Sinh\Project-Csharp\Demo_Snake\Demo_Snake\bin\Debug\CustomForm.exe
 C:\Users\Administrator\Desktop\Project Quản Lý Học Sinh\Project-Csharp\Demo_Snake\Demo_Snake\bin\Debug\CustomForm.pdb
+D:\Demo_Snake\Demo_Snake\bin\Debug\Demo_Snake.exe.config
+D:\Demo_Snake\Demo_Snake\obj\Debug\Demo_Snake.exe
+D:\Demo_Snake\Demo_Snake\obj\Debug\Demo_Snake.pdb
