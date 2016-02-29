@@ -63,6 +63,8 @@ namespace Demo_Snake
          string checkRun = "";//biến này dùng để lấy hướng di chuyển để lưu vào file
          string timePlay = "";//biến này dùng để lưu thời gian chơi vào file
          Boolean Check_Continue = true;//biến này dùng để kiểm tra xem continue lần đầu vào game hay trong quá trình chơi
+        //Khởi tạo Boom
+         Boom boom = new Boom();
         public Form1()
         {   
            // this.FormBorderStyle
@@ -178,6 +180,7 @@ namespace Demo_Snake
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
             paper = e.Graphics;
+            boom.drawBoom(paper);
             if (hide != 0)
             {
                 //vẽ rắn bển phải lần đầu
@@ -394,6 +397,7 @@ namespace Demo_Snake
             if (down == true)//nhấn phím down
             {
                 snake.moveDown();
+                boom.moveDown();
             }
             if (up == true)//nhấn phím up
             {

@@ -120,6 +120,16 @@ namespace Demo_Snake.Properties {
         }
         
         /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap boom {
+            get {
+                object obj = ResourceManager.GetObject("boom", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
         ///   Looks up a localized resource of type System.IO.UnmanagedMemoryStream similar to System.IO.MemoryStream.
         /// </summary>
         internal static System.IO.UnmanagedMemoryStream button_3 {
@@ -129,7 +139,7 @@ namespace Demo_Snake.Properties {
         }
         
         /// <summary>
-        ///   Looks up a localized string similar to nguyen hồ duy khang.
+        ///   Looks up a localized string similar to .
         /// </summary>
         internal static string data {
             get {
@@ -192,6 +202,16 @@ namespace Demo_Snake.Properties {
         internal static System.IO.UnmanagedMemoryStream gameOver {
             get {
                 return ResourceManager.GetStream("gameOver", resourceCulture);
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap icondiem {
+            get {
+                object obj = ResourceManager.GetObject("icondiem", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
             }
         }
         
