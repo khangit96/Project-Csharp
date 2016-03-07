@@ -64,13 +64,23 @@ namespace Demo_Snake
          string timePlay = "";//biến này dùng để lưu thời gian chơi vào file
          Boolean Check_Continue = true;//biến này dùng để kiểm tra xem continue lần đầu vào game hay trong quá trình chơi
         //Khởi tạo Boom
-         Boom boom = new Boom();
+         Boom boom;
+        //Biến này dùng để đếm cứ sau 3s thì sẽ random Boom
+         int countRandBoom = 0;
+         int fakeCountRandBoom = 0;
+        //Khởi tạo đối tượng random boom
+         Random randBoom = new Random();
+        //Biến kiểm tra để paint boom
+         Boolean boomCheck = false;
         public Form1()
         {   
            // this.FormBorderStyle
             InitializeComponent();
             food = new Food(randFood,20,20);
             bigFood = new Food(randBigFood,50,50);
+             boom = new Boom(randBoom);
+
+
             MaximizeBox = false;//không cho phóng to form
         
         }
@@ -180,7 +190,11 @@ namespace Demo_Snake
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
             paper = e.Graphics;
-            boom.drawBoom(paper);
+            if (boomCheck == true)
+            {
+                boom.drawBoom(paper);
+            }
+          
             if (hide != 0)
             {
                 //vẽ rắn bển phải lần đầu
@@ -209,7 +223,7 @@ namespace Demo_Snake
             }
 
             //vẽ food
-            if (foodCount == 3)//nếu như mà rắn ăn đủ 2 thực phẩm
+            if (foodCount == 3)//nếu như mà rắn ăn đủ 3 thực phẩm
             {
                 if (hide != 0)
                 {
@@ -317,9 +331,10 @@ namespace Demo_Snake
             }
             //Sự kiện nhấn phím ESC để Resume và hiện Main Menu
             if (e.KeyData == Keys.Escape)
-            {
+            {    
                     if (escCheck == true)
                     {
+                        boomCheck = false;
                         checkContinue = true;
                         Check_Continue = false;
                         saveScore = Score.ToString();//lưu điểm số vào file để lần load lên khi continue
@@ -393,11 +408,25 @@ namespace Demo_Snake
 
         //Khai báo timer để cho rắn di chuyển
         private void timerRun_Tick(object sender, EventArgs e)
-        {    
+        {
+            if (countRandBoom ==2)
+            {
+                countRandBoom = 0;
+                fakeCountRandBoom =2 ;
+               // boom.boomLocation(randBoom);
+                boom = new Boom(randBoom);
+            }
+            if (fakeCountRandBoom ==2)
+            {
+                boom.moveDown();
+            }
+         
+           
+            boom.moveDown();
             if (down == true)//nhấn phím down
             {
                 snake.moveDown();
-                boom.moveDown();
+               
             }
             if (up == true)//nhấn phím up
             {
@@ -455,7 +484,28 @@ namespace Demo_Snake
                     }
 
                 }
-                  
+
+                //nếu rắn va chạm với vật cản
+
+                if (snake.SnakeRec[i].IntersectsWith(boom.boomRec[0]))
+                {
+                  /*  if (check == true)
+                    {
+
+                        playBigFoodSound();//play âm thanh khi ăn bigFood
+                        Score += 10;
+                        //diemSo.Text = Score.ToString();
+                        diemSo.Text = "Score: " + Score.ToString();
+                        foodCount = fakeFoodCount;
+                        check = false;
+                    }
+                   */
+                    playDiedSound();//Play sound khi chết
+                    Thread.Sleep(2000);
+                    Restart();
+
+                }
+              
              
             }
             //nếu sau 10s mà ko ăn thực phẩm lớn thì sẽ biến mất
@@ -540,6 +590,7 @@ namespace Demo_Snake
             pauseCheck = false;//ngường biến pause
             escCheck = false;//ESC ko hoặt động
             hideContinueButton();//ẩn continue button
+            boomCheck = false;//boom ngừng rơi
          
             
         }
@@ -655,9 +706,10 @@ namespace Demo_Snake
             }
         }
         private void timer1_Tick(object sender, EventArgs e)
-        {
+        {  
             bigFoodTime++;
             time++;
+            countRandBoom++;
             thoiGian.Text = "Time: "+time.ToString();
         }
 
@@ -702,6 +754,7 @@ namespace Demo_Snake
 
         private void btHighScore_Click(object sender, EventArgs e)
         {
+            boomCheck = false;//boom ngừng rơi
             hideButton();
             lbHightScore.Text="Hight Score: "+readFile("data.txt");
             btMainMenu.Enabled = true;
@@ -709,6 +762,8 @@ namespace Demo_Snake
             btMainMenu.Top = 250;
             btMainMenu.Left = 300;
             btMainMenu.Show();
+            hideContinueButton();//ẩn continue button
+           
            
         }
 
@@ -719,12 +774,14 @@ namespace Demo_Snake
 
         private void btNewGame_Click_1(object sender, EventArgs e)
         {
+            boomCheck = true;//bắt đầu có boom rơi
             hideContinueButton();//ẩn continue button
             checkContinue = true;
             pauseCheck = true;//biến pause hoạt động
             escCheck = true;//key ESC hoạt động
             newGame();
             lbHightScore.Text = "";//lbHightScore=""
+          
             
         }
         //Hàm tạo mới trò chơi
@@ -779,6 +836,7 @@ namespace Demo_Snake
 
         private void btMainMenu_Click(object sender, EventArgs e)
         {
+            boomCheck = false;
             if (checkContinue == true)
             {
                   btContinue.Top = 50;
@@ -793,6 +851,13 @@ namespace Demo_Snake
             else
             {
                  hideContinueButton();//ẩn continue button
+
+                 btContinue.Top = 50;
+                 btNewGame.Top = 350;
+                 btContinue.Left = 315;
+                 btInstruction.Top = 215;
+                 btHighScore.Top = 160;
+                 btExit.Top = 270;
                 
             }
             lbHightScore.Text = "";//gán lable hightScore=""
@@ -817,6 +882,7 @@ namespace Demo_Snake
 
         private void btResume_Click(object sender, EventArgs e)
         {
+            boomCheck = true;//boom bắt đầu rơi
             if (checkLeft == true)
             {
                 left = true;
@@ -867,6 +933,7 @@ namespace Demo_Snake
         private void btContinue_Click(object sender, EventArgs e)
         {
             continueGame();//hàm tiếp tục chơi game
+            boomCheck = true;//boom bắt đầu rơi
         }
         //Hàm tiếp tục chơi game
         public void continueGame()
@@ -965,6 +1032,11 @@ namespace Demo_Snake
         private void btContinue_MouseHover(object sender, EventArgs e)
         {
             playSelectSound();
+        }
+
+        private void lbHightScore_Click(object sender, EventArgs e)
+        {
+
         }
 
     

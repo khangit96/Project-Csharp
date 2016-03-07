@@ -211,6 +211,7 @@
             this.lbHightScore.Size = new System.Drawing.Size(251, 37);
             this.lbHightScore.TabIndex = 17;
             this.lbHightScore.Text = "Hight Score: ";
+            this.lbHightScore.Click += new System.EventHandler(this.lbHightScore_Click);
             // 
             // statusStrip1
             // 
