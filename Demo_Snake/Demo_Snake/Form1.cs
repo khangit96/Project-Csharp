@@ -69,6 +69,7 @@ namespace Demo_Snake
          int countRandBoom = 0;
          int fakeCountRandBoom = 0;
         //Khởi tạo đối tượng random boom
+  
          Random randBoom = new Random();
         //Biến kiểm tra để paint boom
          Boolean boomCheck = false;
@@ -112,6 +113,7 @@ namespace Demo_Snake
             btMainMenu.Hide();
             btResume.Hide();
             CheckContinue();//kiểm tra có Continue hay New Game     
+            lbInstruction.Hide();//ẩn label Instruction
        }
         //Hàm hiện Continue Button
         public void showContinueButton()
@@ -763,13 +765,21 @@ namespace Demo_Snake
             btMainMenu.Left = 300;
             btMainMenu.Show();
             hideContinueButton();//ẩn continue button
+            lbInstruction.Hide();
+          
            
            
         }
 
         private void btInstruction_Click(object sender, EventArgs e)
         {
-
+            lbInstruction.Show();//hiện label Instruction
+            hideButton();
+            btMainMenu.Show();
+            btMainMenu.Enabled = true;
+            btContinue.Enabled = false;
+            btContinue.Hide();
+            btMainMenu.Text = "Back";
         }
 
         private void btNewGame_Click_1(object sender, EventArgs e)
@@ -781,6 +791,7 @@ namespace Demo_Snake
             escCheck = true;//key ESC hoạt động
             newGame();
             lbHightScore.Text = "";//lbHightScore=""
+            lbInstruction.Hide();
           
             
         }
@@ -837,6 +848,8 @@ namespace Demo_Snake
         private void btMainMenu_Click(object sender, EventArgs e)
         {
             boomCheck = false;
+            lbInstruction.Hide();
+           
             if (checkContinue == true)
             {
                   btContinue.Top = 50;
@@ -934,6 +947,8 @@ namespace Demo_Snake
         {
             continueGame();//hàm tiếp tục chơi game
             boomCheck = true;//boom bắt đầu rơi
+            lbInstruction.Hide();
+          
         }
         //Hàm tiếp tục chơi game
         public void continueGame()

@@ -53,6 +53,7 @@
             this.statusStrip3 = new System.Windows.Forms.StatusStrip();
             this.Level = new System.Windows.Forms.ToolStripStatusLabel();
             this.btContinue = new System.Windows.Forms.Button();
+            this.lbInstruction = new System.Windows.Forms.Label();
             this.statusStrip1.SuspendLayout();
             this.statusStrip2.SuspendLayout();
             this.statusStrip3.SuspendLayout();
@@ -280,12 +281,25 @@
             this.btContinue.MouseHover += new System.EventHandler(this.btContinue_MouseHover);
             this.btContinue.MouseMove += new System.Windows.Forms.MouseEventHandler(this.btContinue_MouseMove);
             // 
+            // lbInstruction
+            // 
+            this.lbInstruction.AutoSize = true;
+            this.lbInstruction.BackColor = System.Drawing.Color.ForestGreen;
+            this.lbInstruction.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbInstruction.Image = global::Demo_Snake.Properties.Resources.Background;
+            this.lbInstruction.Location = new System.Drawing.Point(80, 67);
+            this.lbInstruction.Name = "lbInstruction";
+            this.lbInstruction.Size = new System.Drawing.Size(98, 26);
+            this.lbInstruction.TabIndex = 25;
+            this.lbInstruction.Text = "My Snake";
+            // 
             // Form1
             // 
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.None;
             this.BackColor = System.Drawing.Color.ForestGreen;
             this.BackgroundImage = global::Demo_Snake.Properties.Resources.Background;
             this.ClientSize = new System.Drawing.Size(785, 425);
+            this.Controls.Add(this.lbInstruction);
             this.Controls.Add(this.btContinue);
             this.Controls.Add(this.statusStrip3);
             this.Controls.Add(this.statusStrip2);
@@ -345,6 +359,7 @@
         private System.Windows.Forms.StatusStrip statusStrip3;
         private System.Windows.Forms.ToolStripStatusLabel Level;
         private System.Windows.Forms.Button btContinue;
+        private System.Windows.Forms.Label lbInstruction;
     }
 }
 
