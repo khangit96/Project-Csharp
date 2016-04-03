@@ -79,9 +79,7 @@ namespace Demo_Snake
             InitializeComponent();
             food = new Food(randFood,20,20);
             bigFood = new Food(randBigFood,50,50);
-             boom = new Boom(randBoom);
-
-
+            boom = new Boom(randBoom);
             MaximizeBox = false;//không cho phóng to form
         
         }
@@ -114,6 +112,8 @@ namespace Demo_Snake
             btResume.Hide();
             CheckContinue();//kiểm tra có Continue hay New Game     
             lbInstruction.Hide();//ẩn label Instruction
+            label1.Hide();
+            label2.Hide();
        }
         //Hàm hiện Continue Button
         public void showContinueButton()
@@ -192,6 +192,8 @@ namespace Demo_Snake
         private void Form1_Paint(object sender, PaintEventArgs e)
         {
             paper = e.Graphics;
+
+            //Vẽ boom khi đang chơi game.
             if (boomCheck == true)
             {
                 boom.drawBoom(paper);
@@ -774,12 +776,16 @@ namespace Demo_Snake
         private void btInstruction_Click(object sender, EventArgs e)
         {
             lbInstruction.Show();//hiện label Instruction
+            label2.Show();
+            label1.Show();
             hideButton();
             btMainMenu.Show();
             btMainMenu.Enabled = true;
             btContinue.Enabled = false;
             btContinue.Hide();
             btMainMenu.Text = "Back";
+            btMainMenu.Left = 300;
+            btMainMenu.Top = 230;
         }
 
         private void btNewGame_Click_1(object sender, EventArgs e)
@@ -787,6 +793,7 @@ namespace Demo_Snake
             boomCheck = true;//bắt đầu có boom rơi
             hideContinueButton();//ẩn continue button
             checkContinue = true;
+
             pauseCheck = true;//biến pause hoạt động
             escCheck = true;//key ESC hoạt động
             newGame();
@@ -849,6 +856,8 @@ namespace Demo_Snake
         {
             boomCheck = false;
             lbInstruction.Hide();
+            label1.Hide();
+            label2.Hide();
            
             if (checkContinue == true)
             {
@@ -1050,6 +1059,11 @@ namespace Demo_Snake
         }
 
         private void lbHightScore_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void lbInstruction_Click(object sender, EventArgs e)
         {
 
         }

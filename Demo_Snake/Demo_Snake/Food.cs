@@ -10,7 +10,6 @@ namespace Demo_Snake
     class Food
     {
         private int x, y, width, height;//x,y là tọa độ của food trên form,width,height là kích thước của food;
-      //  private SolidBrush brush;//khai báo cọ vẽ
         public Rectangle foodRec;
         Image smallFood, bigFood;//hình ảnh food
 

@@ -54,6 +54,8 @@
             this.Level = new System.Windows.Forms.ToolStripStatusLabel();
             this.btContinue = new System.Windows.Forms.Button();
             this.lbInstruction = new System.Windows.Forms.Label();
+            this.label1 = new System.Windows.Forms.Label();
+            this.label2 = new System.Windows.Forms.Label();
             this.statusStrip1.SuspendLayout();
             this.statusStrip2.SuspendLayout();
             this.statusStrip3.SuspendLayout();
@@ -284,14 +286,39 @@
             // lbInstruction
             // 
             this.lbInstruction.AutoSize = true;
-            this.lbInstruction.BackColor = System.Drawing.Color.ForestGreen;
-            this.lbInstruction.Font = new System.Drawing.Font("Comic Sans MS", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.lbInstruction.BackColor = System.Drawing.Color.Transparent;
+            this.lbInstruction.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.lbInstruction.Image = global::Demo_Snake.Properties.Resources.Background;
-            this.lbInstruction.Location = new System.Drawing.Point(80, 67);
+            this.lbInstruction.Location = new System.Drawing.Point(243, 98);
             this.lbInstruction.Name = "lbInstruction";
-            this.lbInstruction.Size = new System.Drawing.Size(98, 26);
+            this.lbInstruction.Size = new System.Drawing.Size(369, 23);
             this.lbInstruction.TabIndex = 25;
-            this.lbInstruction.Text = "My Snake";
+            this.lbInstruction.Text = "-Use four key:Up,Down,Left,Right to move snake.";
+            this.lbInstruction.Click += new System.EventHandler(this.lbInstruction_Click);
+            // 
+            // label1
+            // 
+            this.label1.AutoSize = true;
+            this.label1.BackColor = System.Drawing.Color.Transparent;
+            this.label1.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label1.Location = new System.Drawing.Point(120, 139);
+            this.label1.Name = "label1";
+            this.label1.Size = new System.Drawing.Size(653, 23);
+            this.label1.TabIndex = 10;
+            this.label1.Text = "-Press once WhiteSpace key to pause game,press twice WhiteSpace key to resume gam" +
+    "e.";
+            // 
+            // label2
+            // 
+            this.label2.AutoSize = true;
+            this.label2.BackColor = System.Drawing.Color.Transparent;
+            this.label2.Font = new System.Drawing.Font("Comic Sans MS", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label2.Image = global::Demo_Snake.Properties.Resources.Background;
+            this.label2.Location = new System.Drawing.Point(290, 181);
+            this.label2.Name = "label2";
+            this.label2.Size = new System.Drawing.Size(261, 23);
+            this.label2.TabIndex = 26;
+            this.label2.Text = "-Press Esc key to back Main Menu";
             // 
             // Form1
             // 
@@ -299,6 +326,8 @@
             this.BackColor = System.Drawing.Color.ForestGreen;
             this.BackgroundImage = global::Demo_Snake.Properties.Resources.Background;
             this.ClientSize = new System.Drawing.Size(785, 425);
+            this.Controls.Add(this.label2);
+            this.Controls.Add(this.label1);
             this.Controls.Add(this.lbInstruction);
             this.Controls.Add(this.btContinue);
             this.Controls.Add(this.statusStrip3);
@@ -360,6 +389,8 @@
         private System.Windows.Forms.ToolStripStatusLabel Level;
         private System.Windows.Forms.Button btContinue;
         private System.Windows.Forms.Label lbInstruction;
+        private System.Windows.Forms.Label label1;
+        private System.Windows.Forms.Label label2;
     }
 }
 

@@ -10,7 +10,6 @@ namespace Demo_Snake
 {
     class Snake
     {
-        private SolidBrush brush;
         public int x, y, width, height;
         private Rectangle[] snakeRec;
         Image image, left, down, rightHead, leftHead, up, downHead, upHead;
@@ -26,7 +25,6 @@ namespace Demo_Snake
         public Snake(int snakeLength, int xCoordinate,int yCoordinate)
         {
             snakeRec = new Rectangle[snakeLength];
-          //  brush = new SolidBrush(Color.Red);
             image = Properties.Resources._52;
             left = Properties.Resources.left;
             rightHead = Properties.Resources.rightHead;
