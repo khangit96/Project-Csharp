@@ -1,0 +1,18 @@
+c:\users\sy\documents\visual studio 2013\Projects\CustomForm\CustomForm\bin\Debug\CustomForm.exe.config
+c:\users\sy\documents\visual studio 2013\Projects\CustomForm\CustomForm\bin\Debug\CustomForm.exe
+c:\users\sy\documents\visual studio 2013\Projects\CustomForm\CustomForm\bin\Debug\CustomForm.pdb
+c:\users\sy\documents\visual studio 2013\Projects\CustomForm\CustomForm\obj\Debug\CustomForm.csprojResolveAssemblyReference.cache
+c:\users\sy\documents\visual studio 2013\Projects\CustomForm\CustomForm\obj\Debug\CustomForm.MyForm.resources
+c:\users\sy\documents\visual studio 2013\Projects\CustomForm\CustomForm\obj\Debug\CustomForm.Properties.Resources.resources
+c:\users\sy\documents\visual studio 2013\Projects\CustomForm\CustomForm\obj\Debug\CustomForm.csproj.GenerateResource.Cache
+c:\users\sy\documents\visual studio 2013\Projects\CustomForm\CustomForm\obj\Debug\CustomForm.exe
+c:\users\sy\documents\visual studio 2013\Projects\CustomForm\CustomForm\obj\Debug\CustomForm.pdb
+C:\Users\Administrator\Desktop\Project Quản Lý Học Sinh\Project-Csharp\Demo_Snake\CustomForm\bin\Debug\CustomForm.exe.config
+C:\Users\Administrator\Desktop\Project Quản Lý Học Sinh\Project-Csharp\Demo_Snake\CustomForm\bin\Debug\CustomForm.exe
+C:\Users\Administrator\Desktop\Project Quản Lý Học Sinh\Project-Csharp\Demo_Snake\CustomForm\bin\Debug\CustomForm.pdb
+C:\Users\Administrator\Desktop\Project Quản Lý Học Sinh\Project-Csharp\Demo_Snake\CustomForm\obj\Debug\CustomForm.csprojResolveAssemblyReference.cache
+C:\Users\Administrator\Desktop\Project Quản Lý Học Sinh\Project-Csharp\Demo_Snake\CustomForm\obj\Debug\CustomForm.MyForm.resources
+C:\Users\Administrator\Desktop\Project Quản Lý Học Sinh\Project-Csharp\Demo_Snake\CustomForm\obj\Debug\CustomForm.Properties.Resources.resources
+C:\Users\Administrator\Desktop\Project Quản Lý Học Sinh\Project-Csharp\Demo_Snake\CustomForm\obj\Debug\CustomForm.csproj.GenerateResource.Cache
+C:\Users\Administrator\Desktop\Project Quản Lý Học Sinh\Project-Csharp\Demo_Snake\CustomForm\obj\Debug\CustomForm.exe
+C:\Users\Administrator\Desktop\Project Quản Lý Học Sinh\Project-Csharp\Demo_Snake\CustomForm\obj\Debug\CustomForm.pdb
